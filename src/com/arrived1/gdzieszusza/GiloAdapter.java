@@ -1,6 +1,7 @@
 package com.arrived1.gdzieszusza;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -32,32 +33,53 @@ class GiloAdapter extends PagerAdapter {
 		return page_titles.length;
 	}
 
-	@Override
-	public boolean isViewFromObject(View v, Object o) {
-		// TODO Auto-generated method stub
-		return v.equals(o);
-	}
-
 	//This is the title of the page that will apppear on the "tab"
 	public CharSequence getPageTitle(int position) {
         return page_titles[position];
     }
 
+	//swicho-case po position
 	//This is where all the magic happen
 	public Object instantiateItem(View pager, int position) {
 		final LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View v = inflater.inflate(R.layout.page, null, false);
+		
+		View v;
+		TextView title;
+		TextView description;
+		
+		switch (position)
+        {
+        case 0:
+        	v = inflater.inflate(R.layout.first_page, null, false);
 
-		TextView title = (TextView)v.findViewById(R.id.tvTitle);
-		TextView description = (TextView)v.findViewById(R.id.tvdesc);
+    		title = (TextView)v.findViewById(R.id.tvTitle);
+    		description = (TextView)v.findViewById(R.id.tvdesc);
 
-		title.setText(page_titles[position]);
-		description.setText(desc[position]);
+    		title.setText("PIerwsza strona");
+    		description.setText("bdsjflk sfkljsdfl skdfj lsdfjlsdf j sidfhsdhj fzkdhjf'zkl xdfgzkjl'fzfgdfg DUPA");
+            break;
+        default:
+        	v = inflater.inflate(R.layout.page, null, false);
+
+    		title = (TextView)v.findViewById(R.id.tvTitle);
+    		description = (TextView)v.findViewById(R.id.tvdesc);
+
+    		title.setText(page_titles[position]);
+    		description.setText(desc[position]);
+        }
+		
+		
 
 		//This is very important
 		((ViewPager)pager).addView(v, 0);
 
 		return v;
+	}
+	
+	@Override
+	public boolean isViewFromObject(View v, Object o) {
+		// TODO Auto-generated method stub
+		return v.equals(o);
 	}
 
 	@Override
