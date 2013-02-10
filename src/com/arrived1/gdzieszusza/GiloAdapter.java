@@ -1,7 +1,6 @@
 package com.arrived1.gdzieszusza;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 
 class GiloAdapter extends PagerAdapter {
 	//these are the titles that will appear on the "tabs"
-	final String[] page_titles = new String[]{"Home", "Me", "Apps", "Android", "About"};
+	final String[] page_titles = new String[]{"Dzisiaj", "Kolejne dni", "Pe³na wersja", "Android", "About"};
 	//this will go the description TextView
 	final String[] desc = new String[]{
 		"This is the homepage the first one you will see.",
@@ -20,7 +19,7 @@ class GiloAdapter extends PagerAdapter {
 		"This is the android section",
 		"This blog is my journal through life in code and development"};
 	
-	Context context;
+	private Context context;
 
 	public GiloAdapter(Context c){
 		this.context = c;
@@ -49,9 +48,17 @@ class GiloAdapter extends PagerAdapter {
 		switch (position)
         {
         case 0:
-        	FirstPage firstPage = new FirstPage(inflater, "PIerwsza strona", R.layout.first_page);
+        	Today firstPage = new Today(inflater, "Pierwsza strona", R.layout.today);
         	view = firstPage.getView();
             break;
+        case 1:
+        	OtherDays secondPage = new OtherDays(inflater, "Druga strona", R.layout.today);
+        	view = secondPage.getView();
+            break;	
+        case 3:
+        	FullVersion fullVersion = new FullVersion(inflater, "Druga strona", R.layout.today);
+        	view = fullVersion.getView();
+        	break;
         default:
         	view = inflater.inflate(R.layout.page, null, false);
 
@@ -70,7 +77,6 @@ class GiloAdapter extends PagerAdapter {
 	
 	@Override
 	public boolean isViewFromObject(View v, Object o) {
-		// TODO Auto-generated method stub
 		return v.equals(o);
 	}
 
