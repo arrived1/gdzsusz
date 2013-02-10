@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 class GiloAdapter extends PagerAdapter {
 	//these are the titles that will appear on the "tabs"
-	final String[] page_titles = new String[]{"Dzisiaj", "Kolejne dni", "Pe³na wersja", "Android", "About"};
+	final String[] page_titles = new String[]{"Dzisiaj", "Kolejne dni", "Pe³na wersja"};
 	//this will go the description TextView
 	final String[] desc = new String[]{
 		"This is the homepage the first one you will see.",
@@ -18,17 +18,15 @@ class GiloAdapter extends PagerAdapter {
 		"I build appps mostly for fun. If you ever want an app just holla",
 		"This is the android section",
 		"This blog is my journal through life in code and development"};
-	
 	private Context context;
 
 	public GiloAdapter(Context c){
 		this.context = c;
 	}
 
-	//This is the number of pages -- 5
 	@Override
 	public int getCount() {
-		// TODO Auto-generated method stub
+		//This is the number of pages -- 5
 		return page_titles.length;
 	}
 
@@ -69,9 +67,7 @@ class GiloAdapter extends PagerAdapter {
     		description.setText(desc[position]);
         }
 
-		//This is very important
 		((ViewPager)pager).addView(view, 0);
-
 		return view;
 	}
 	

@@ -12,10 +12,18 @@
         android:text="Title"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
-    <TextView
-        android:id="@+id/tvdesc"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Description" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="50dp" >
+    
+	    <TextView
+	        android:id="@+id/tvdesc"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Description" />
+	    
+    </ScrollView>
 
 </LinearLayout>
