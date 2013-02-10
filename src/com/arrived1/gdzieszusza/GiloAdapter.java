@@ -38,42 +38,34 @@ class GiloAdapter extends PagerAdapter {
         return page_titles[position];
     }
 
-	//swicho-case po position
 	//This is where all the magic happen
 	public Object instantiateItem(View pager, int position) {
 		final LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		
-		View v;
+		View view;
 		TextView title;
 		TextView description;
 		
 		switch (position)
         {
         case 0:
-        	v = inflater.inflate(R.layout.first_page, null, false);
-
-    		title = (TextView)v.findViewById(R.id.tvTitle);
-    		description = (TextView)v.findViewById(R.id.tvdesc);
-
-    		title.setText("PIerwsza strona");
-    		description.setText("bdsjflk sfkljsdfl skdfj lsdfjlsdf j sidfhsdhj fzkdhjf'zkl xdfgzkjl'fzfgdfg DUPA");
+        	FirstPage firstPage = new FirstPage(inflater, "PIerwsza strona", R.layout.first_page);
+        	view = firstPage.getView();
             break;
         default:
-        	v = inflater.inflate(R.layout.page, null, false);
+        	view = inflater.inflate(R.layout.page, null, false);
 
-    		title = (TextView)v.findViewById(R.id.tvTitle);
-    		description = (TextView)v.findViewById(R.id.tvdesc);
+    		title = (TextView)view.findViewById(R.id.tvTitle);
+    		description = (TextView)view.findViewById(R.id.tvdesc);
 
     		title.setText(page_titles[position]);
     		description.setText(desc[position]);
         }
-		
-		
 
 		//This is very important
-		((ViewPager)pager).addView(v, 0);
+		((ViewPager)pager).addView(view, 0);
 
-		return v;
+		return view;
 	}
 	
 	@Override
