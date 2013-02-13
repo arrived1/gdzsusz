@@ -53,10 +53,10 @@ public class City {
 
 	    String line = null;
 	    while ((line = reader.readLine()) != null) {
-	    	webPageBuffor += line + "\n";
+	    	webPageBuffor += line + " ";
 	    }
-//	     System.out.println("DUPA, " + webPage.length());
-//	     System.out.println("DUPA, " + webPage.toString());
+	     System.out.println("DUPA city size: " + webPageBuffor.length());
+	     System.out.println("DUPA city: " + webPageBuffor.toString());
 	}
 	 
 	public String getWebPage() {
@@ -67,5 +67,12 @@ public class City {
 	 
 	public String getName() {
 		return name;
+	}
+	
+	public void showVector() {
+		System.out.println("DUPA, rozmiar: " + data.size());
+		for(int i = 0; i < data.size(); i++) {
+			System.out.println("DUPA, " + i + ": " + data.elementAt(i).street + " " + data.elementAt(i).date.toString());	
+		}
 	}
 }

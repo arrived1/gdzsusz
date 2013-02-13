@@ -9,6 +9,7 @@ public class Today extends Tab{
 		super(inflater_, name_, layout);
 
 		City city = new City("Wroclaw", "http://www.apteka-zwycieska.pl/gdzieSusza/wroclaw.html");
+		city.showVector();
 		
 		TextView title = (TextView)view.findViewById(R.id.tvTitle);
 		TextView description = (TextView)view.findViewById(R.id.tvdesc);

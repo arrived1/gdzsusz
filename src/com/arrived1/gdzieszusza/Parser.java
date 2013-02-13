@@ -12,18 +12,24 @@ public class Parser {
 		
 		boolean reading = false;
 		for(int i = 0; i < splitedTxt.length; i++) {
-			if(splitedTxt[i] == "<body>")
+			if(splitedTxt[i].equals("<body>")) {
 				reading = true;
-			if(splitedTxt[i] == "</body>")
+				continue;
+			}
+			if(splitedTxt[i].equals("</body>")) {
 				reading = false;
+			}
 			
-			if(reading) {
-				if(splitedTxt[i] == "<br>") {
-					analizeLine(line);
+			if(reading == true) {
+				System.out.println("DUPA, Parser czytam: " + splitedTxt[i]);
+				if(splitedTxt[i].equals("<br>")) {
+//					analizeLine(line);
 					line = "";
+					continue;
 				}
-				
-				line += splitedTxt[i] + " ";
+			
+				String tmp = splitedTxt[i] + " ";
+				line = line + tmp; 
 			}
 		}
 	}
