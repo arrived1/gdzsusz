@@ -11,7 +11,9 @@ public class MainActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //TODO: implement city getter
         String cityName = "Wroclaw";
+        
         //Instantiating the adapter
         GiloAdapter mAdapter = new GiloAdapter(this, cityName);
 
