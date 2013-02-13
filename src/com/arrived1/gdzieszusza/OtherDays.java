@@ -4,9 +4,11 @@ import android.view.LayoutInflater;
 import android.widget.TextView;
 
 public class OtherDays extends Tab{
-
-	public OtherDays(LayoutInflater inflater_, String name_, int layout) {
-		super(inflater_, name_, layout);
+	private City city;
+	
+	public OtherDays(LayoutInflater inflater_, int layout, City city_) {
+		super(inflater_, layout);
+		this.city = city_;
 	
 		
 		TextView title = (TextView)view.findViewById(R.id.tvTitle);

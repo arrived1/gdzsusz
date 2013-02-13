@@ -5,8 +5,8 @@ import android.widget.TextView;
 
 public class FullVersion extends Tab {
 
-	public FullVersion(LayoutInflater inflater_, String name_, int layout) {
-		super(inflater_, name_, layout);
+	public FullVersion(LayoutInflater inflater_, int layout) {
+		super(inflater_, layout);
 	
 		
 		TextView title = (TextView)view.findViewById(R.id.tvTitle);

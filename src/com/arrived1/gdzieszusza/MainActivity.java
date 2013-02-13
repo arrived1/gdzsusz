@@ -11,8 +11,9 @@ public class MainActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String cityName = "Wroclaw";
         //Instantiating the adapter
-        GiloAdapter mAdapter = new GiloAdapter(this);
+        GiloAdapter mAdapter = new GiloAdapter(this, cityName);
 
         //instantiate the Views
         ViewPager mPager = (ViewPager)findViewById(R.id.pager);
