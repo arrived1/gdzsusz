@@ -21,9 +21,8 @@ public class Parser {
 			}
 			
 			if(reading == true) {
-				System.out.println("DUPA, Parser czytam: " + splitedTxt[i]);
 				if(splitedTxt[i].equals("<br>")) {
-//					analizeLine(line);
+					analizeLine(line);
 					line = "";
 					continue;
 				}
@@ -40,12 +39,19 @@ public class Parser {
 		String dateString = splitedLine[0];
 		String streetString = splitedLine[1];
 		
-		String[] splitedDateString = dateString.split(".");
+		//TODO: dirtyHack for additional space in first element on the first call of the function
+		if(splitedLine.length > 2) {
+			dateString = splitedLine[1];
+			streetString = splitedLine[2];
+		}
+		
+		String[] splitedDateString = dateString.split("\\.");
+		System.out.println("DUPA, Parser dateSplit: |" + dateString + "|");
+		System.out.println("DUPA, Parser dateSplit size: " + splitedDateString.length);
 		
 		String day = splitedDateString[0];
 		String month = splitedDateString[1];
 		String year = splitedDateString[2];
-
 
 		Date date = new Date(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
 		Police police = new Police(streetString, date);
