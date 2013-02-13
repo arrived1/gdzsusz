@@ -1,6 +1,6 @@
 package com.arrived1.gdzieszusza;
 
-import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Vector;
 
 public class Parser {
@@ -33,6 +33,7 @@ public class Parser {
 		}
 	}
 	
+
 	private void analizeLine(String line) {
 		String[] splitedLine = line.split(" ");
 		
@@ -46,14 +47,12 @@ public class Parser {
 		}
 		
 		String[] splitedDateString = dateString.split("\\.");
-		System.out.println("DUPA, Parser dateSplit: |" + dateString + "|");
-		System.out.println("DUPA, Parser dateSplit size: " + splitedDateString.length);
-		
+
 		String day = splitedDateString[0];
 		String month = splitedDateString[1];
 		String year = splitedDateString[2];
 
-		Date date = new Date(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
+		GregorianCalendar date = new GregorianCalendar(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
 		Police police = new Police(streetString, date);
 		
 		data.addElement(police);

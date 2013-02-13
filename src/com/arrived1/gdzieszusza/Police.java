@@ -1,13 +1,13 @@
 package com.arrived1.gdzieszusza;
 
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Police {
 	public String street;
-	public Date date;
+	public GregorianCalendar date;
 
-	public Police(String street_, Date date_) {
+	public Police(String street_, GregorianCalendar date2) {
 		this.street = street_;
-		this.date = date_;
+		this.date = date2;
 	}
 }

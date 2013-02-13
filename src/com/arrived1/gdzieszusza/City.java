@@ -59,16 +59,18 @@ public class City {
 	     System.out.println("DUPA city: " + webPageBuffor.toString());
 	}
 	 
+	public String getName() {
+		return name;
+	}
+	
+	//TODO remove this method
 	public String getWebPage() {
 		if(webPageBuffor.length() < 1)
 			return "Pusto mam!!!";
 		return webPageBuffor;
 	}
-	 
-	public String getName() {
-		return name;
-	}
 	
+	//TODO remove this method
 	public void showVector() {
 		System.out.println("DUPA, rozmiar: " + data.size());
 		for(int i = 0; i < data.size(); i++) {
