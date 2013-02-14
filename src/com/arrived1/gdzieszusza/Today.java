@@ -1,5 +1,7 @@
 package com.arrived1.gdzieszusza;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import android.view.LayoutInflater;
 import android.widget.TextView;
 
@@ -10,11 +12,14 @@ public class Today extends Tab{
 		super(inflater_, layout);
 		this.city = city_;
 		
-		TextView title = (TextView)view.findViewById(R.id.tvTitle);
-		TextView description = (TextView)view.findViewById(R.id.tvdesc);
+		TextView cityText = (TextView)view.findViewById(R.id.cityString);
+		TextView dateText = (TextView)view.findViewById(R.id.dateString);
 
-		title.setText("Pierwsza strona");
-		description.setText(city.getWebPage());
+		cityText.setText("Miasto:" + city.getName());
+		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Date date = new Date(); ;
+		dateText.setText("Data" + dateFormat.format(date));
 	}
 
 }

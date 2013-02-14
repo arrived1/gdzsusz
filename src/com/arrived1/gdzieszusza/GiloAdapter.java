@@ -46,11 +46,11 @@ class GiloAdapter extends PagerAdapter {
         	view = firstPage.getView();
             break;
         case 1:
-        	OtherDays secondPage = new OtherDays(inflater, R.layout.today, city);
+        	OtherDays secondPage = new OtherDays(inflater, R.layout.other_days, city);
         	view = secondPage.getView();
             break;	
         case 3:
-        	FullVersion fullVersion = new FullVersion(inflater, R.layout.today);
+        	FullVersion fullVersion = new FullVersion(inflater, R.layout.full_version);
         	view = fullVersion.getView();
         	break;
         default:
