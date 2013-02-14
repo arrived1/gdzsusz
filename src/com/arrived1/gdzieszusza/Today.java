@@ -15,11 +15,14 @@ public class Today extends Tab{
 		TextView cityText = (TextView)view.findViewById(R.id.cityString);
 		TextView dateText = (TextView)view.findViewById(R.id.dateString);
 
-		cityText.setText("Miasto:" + city.getName());
+		cityText.setText("Miasto: " + city.getName());
 		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
 		Date date = new Date(); ;
-		dateText.setText("Data" + dateFormat.format(date));
+		dateText.setText("Data: " + dateFormat.format(date));
+		
+		
+
 	}
 
 }
