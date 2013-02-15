@@ -1,42 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
     <LinearLayout
+        android:id="@+id/txtGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
-    
-	    <TextView
-	        android:id="@+id/cityString"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content" />
-	
-	    <TextView
-	        android:id="@+id/dateString"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content" />
-	    
-	    <TextView
-	        android:id="@+id/streetString"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/streetString"
-	        android:textAppearance="?android:attr/textAppearanceLarge"  />
-	
-	</LinearLayout>
-	
-     <ListView
-        android:id="@+id/listView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
-    
-    <Button 
-        android:text="Button" 
-        android:background="@drawable/blue_button" 
-        style="@style/ButtonText" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/cityString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/dateString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/streetString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/streetString"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/widgetGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:layout_below="@id/txtGroup"
+        android:layout_marginBottom="50dp">
+        
+	    <ListView
+	        android:id="@+id/listView"
+	        android:layout_width="fill_parent"
+	        android:layout_height="match_parent" />
+	
+	    <Button
+	        style="@style/ButtonText"
+	        android:background="@drawable/blue_button"
+	        android:layout_gravity="bottom"
+	    
+	        android:text="Button" />
+    </LinearLayout>
+
+</RelativeLayout >

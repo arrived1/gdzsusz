@@ -34,19 +34,11 @@ public class Today extends Tab{
 			        "Sri Lanka",
 			        "China",
 			        "Bangladesh",
-			        "Nepal",
-			        "Afghanistan",
-			        "North Korea",
-			        "South Korea",
-			        "Japan"
+			        "China"
 			    };
 			 
 			    // Array of integers points to images stored in /res/drawable-ldpi/
 			    int[] flags = new int[]{
-			        R.drawable.ic,
-			        R.drawable.ic,
-			        R.drawable.ic,
-			        R.drawable.ic,
 			        R.drawable.ic,
 			        R.drawable.ic,
 			        R.drawable.ic,
@@ -62,17 +54,13 @@ public class Today extends Tab{
 			        "Sri Lankan Rupee",
 			        "Renminbi",
 			        "Bangladeshi Taka",
-			        "Nepalese Rupee",
-			        "Afghani",
-			        "North Korean Won",
-			        "South Korean Won",
-			        "Japanese Yen"
+			        "Renminbi"
 			    };
 			    
 			    
 			    List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
 			    
-		        for(int i=0;i<10;i++){
+		        for(int i=0; i<6 ;i++) {
 		            HashMap<String, String> hm = new HashMap<String,String>();
 		            hm.put("txt", "Country : " + countries[i]);
 		            hm.put("cur","Currency : " + currency[i]);
@@ -84,7 +72,7 @@ public class Today extends Tab{
 		        String[] from = { "flag","txt","cur" };
 		 
 		        // Ids of views in listview_layout
-		        int[] to = { R.id.flag,R.id.txt,R.id.cur};
+		        int[] to = { R.id.flag, R.id.txt, R.id.cur};
 		 
 		        // Instantiating an adapter to store each items
 		        // R.layout.listview_layout defines the layout of each item
