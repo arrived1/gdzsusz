@@ -81,19 +81,4 @@ public class City {
 		}
 		return currentPolice;
 	}
-	
-	//TODO remove this method
-	public String getWebPage() {
-		if(webPageBuffor.length() < 1)
-			return "Pusto mam!!!";
-		return webPageBuffor;
-	}
-	
-	//TODO remove this method
-	public void showVector() {
-		System.out.println("DUPA, rozmiar: " + data.size());
-		for(int i = 0; i < data.size(); i++) {
-			System.out.println("DUPA, " + i + ": " + data.elementAt(i).street + " " + data.elementAt(i).date.toString());	
-		}
-	}
 }
