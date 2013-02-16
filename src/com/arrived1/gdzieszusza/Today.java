@@ -1,8 +1,5 @@
 package com.arrived1.gdzieszusza;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import android.view.LayoutInflater;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -15,17 +12,12 @@ public class Today extends Tab{
 		this.city = city_;
 		
 		TextView cityText = (TextView)view.findViewById(R.id.cityString);
-		TextView dateText = (TextView)view.findViewById(R.id.dateString);
 
-		cityText.setText("Miasto: " + city.getName());
+		cityText.setText(" " + city.getName());
 		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-		Date date = new Date();
-		dateText.setText("Data: " + dateFormat.format(date));
-		
-		 TodayListAdapter adapter = new TodayListAdapter(view.getContext(), city.getTodayData());
-		 ListView listView = ( ListView )view.findViewById(R.id.listView);
-		 listView.setAdapter(adapter);
+		TodayListAdapter adapter = new TodayListAdapter(view.getContext(), city.getTodayData());
+		ListView listView = (ListView)view.findViewById(R.id.listView);
+		listView.setAdapter(adapter);
 	}
 
 }

@@ -8,6 +8,7 @@
     
     <string name="txtStreet">Ulica:</string>
     <string name="txtDate">Data:</string>
+    <string name="txtCity">Miasto:</string>
     
     <string name="list_view_icon_desc">icon</string>
     
