@@ -19,22 +19,21 @@ public class TodayListAdapter extends ArrayAdapter<Police> {
 		super(context, R.layout.listview_layout, values);
 		this.context = context;
 		this.values = values;
-		
 	}
  
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
- 
 		View rowView = inflater.inflate(R.layout.listview_layout, parent, false);
-		TextView textView1 = (TextView) rowView.findViewById(R.id.txt);
-		textView1.setText("Ulica: " + values.elementAt(position).street);
 		
-		TextView textView2 = (TextView) rowView.findViewById(R.id.cur);
+		TextView textView1 = (TextView)rowView.findViewById(R.id.txt);
+		textView1.setText(" " + values.elementAt(position).street);
+		
+		TextView textView2 = (TextView)rowView.findViewById(R.id.date);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-		textView2.setText("Data: " + dateFormat.format(values.elementAt(position).date.getTime()));
+		textView2.setText(" " + dateFormat.format(values.elementAt(position).date.getTime()));
 		
-		ImageView imageView = (ImageView) rowView.findViewById(R.id.flag);
+		ImageView imageView = (ImageView)rowView.findViewById(R.id.flag);
 		imageView.setImageResource(R.drawable.ic);
  
 		return rowView;
