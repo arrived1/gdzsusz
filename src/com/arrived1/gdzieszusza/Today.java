@@ -18,5 +18,4 @@ public class Today extends Tab{
 		ListView listView = (ListView)view.findViewById(R.id.listView);
 		listView.setAdapter(adapter);
 	}
-
 }

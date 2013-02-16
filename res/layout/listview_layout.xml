@@ -27,7 +27,7 @@
 	         	android:id="@+id/txtStreet"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:textSize="20dp"
+	            android:textSize="17sp"
 	            android:text="@string/txtStreet"
 	            android:textColor="@color/light_blue" />
 	         
@@ -35,7 +35,7 @@
 	         	android:id="@+id/txt"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:textSize="20dp" />
+	            android:textSize="20sp" />
 
   		</LinearLayout>
   		
@@ -48,7 +48,7 @@
 	         	android:id="@+id/txtDate"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:textSize="10dp"
+	            android:textSize="10sp"
 	            android:text="@string/txtDate"
 	            android:textColor="@color/light_blue" />
             
@@ -56,7 +56,7 @@
 		        android:id="@+id/date"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:textSize="10dp" />
+		        android:textSize="10sp" />
  		</LinearLayout>
 
     </LinearLayout>
