@@ -1,5 +1,6 @@
 package com.arrived1.gdzieszusza;
 
+import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.Vector;
 
@@ -50,8 +51,9 @@ public class Parser {
 		String day = splitedDateString[0];
 		String month = splitedDateString[1];
 		String year = splitedDateString[2];
-
-		GregorianCalendar date = new GregorianCalendar(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
+		
+		//TODO: month - 1, dirty hack b-cos months in GregorianCalendar are counted from 0 to 11....
+		GregorianCalendar date = new GregorianCalendar(Integer.parseInt(year), Integer.parseInt(month) - 1, Integer.parseInt(day));
 		Police police = new Police(streetString, date);
 		
 		data.addElement(police);
