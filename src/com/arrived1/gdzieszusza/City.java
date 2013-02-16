@@ -63,6 +63,10 @@ public class City {
 		return name;
 	}
 	
+	public Vector<Police> getData() {
+		return data;
+	}
+	
 	//TODO remove this method
 	public String getWebPage() {
 		if(webPageBuffor.length() < 1)

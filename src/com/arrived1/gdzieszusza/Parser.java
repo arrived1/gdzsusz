@@ -32,7 +32,6 @@ public class Parser {
 			}
 		}
 	}
-	
 
 	private void analizeLine(String line) {
 		String[] splitedLine = line.split(" ");
