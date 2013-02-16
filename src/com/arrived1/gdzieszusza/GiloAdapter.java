@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 class GiloAdapter extends PagerAdapter {
-	final String[] page_titles = new String[]{"Dzisiaj", "Kolejne dni", "Pełna wersja"};
+	final String[] page_titles = new String[]{"Dzisiaj", "Jutro", "Pełna wersja"};
 	private Context context;
 	private City city;
 

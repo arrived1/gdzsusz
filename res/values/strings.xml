@@ -4,7 +4,8 @@
     <string name="app_name">Gdzie Szuszą</string>
     <string name="menu_settings">Settings</string>
 
-    <string name="streetString">Suszą na ulicach:</string>
+    <string name="streetString">Dzisiaj suszą na ulicach:</string>
+    <string name="tomorrowStreetString">Jutro suszą na ulicach:</string>
     
     <string name="txtStreet">Ulica:</string>
     <string name="txtDate">Data:</string>

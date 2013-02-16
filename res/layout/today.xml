@@ -53,18 +53,21 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" 
         android:layout_below="@id/txtGroup"
-        android:layout_marginBottom="50dp">
+        android:layout_marginBottom="100dp">
         
 	    <ListView
 	        android:id="@+id/listView"
 	        android:layout_width="fill_parent"
 	        android:layout_height="match_parent" />
-	
-	    <Button
-	        style="@style/ButtonText"
-	        android:background="@drawable/blue_button"
-	        android:layout_gravity="bottom"
-	        android:text="Button" />
+
     </LinearLayout>
+        
+     <Button
+        style="@style/ButtonText"
+        android:background="@drawable/blue_button"
+        android:layout_gravity="bottom"
+        android:text="Button"
+        android:layout_below="@id/widgetGroup"
+        android:layout_marginBottom="50dp" />
 
 </RelativeLayout >

@@ -1,6 +1,7 @@
 package com.arrived1.gdzieszusza;
 
 import android.view.LayoutInflater;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class OtherDays extends Tab{
@@ -11,10 +12,11 @@ public class OtherDays extends Tab{
 		this.city = city_;
 	
 		
-		TextView title = (TextView)view.findViewById(R.id.tvTitle);
-		TextView description = (TextView)view.findViewById(R.id.tvdesc);
-	
-		title.setText("Druga strona");
-		description.setText("bdsjflk sfkljsdfl skdfj lsdfjlsdf j sidfhsdhj fzkdhjf'zkl xdfgzkjl'fzfgdfg DUPA");
+		TextView cityText = (TextView)view.findViewById(R.id.cityString);
+		cityText.setText(" " + city.getName());
+		
+		TodayListAdapter adapter = new TodayListAdapter(view.getContext(), city.getTodayData());
+		ListView listView = (ListView)view.findViewById(R.id.listViewOther);
+		listView.setAdapter(adapter);
 	}
 }
