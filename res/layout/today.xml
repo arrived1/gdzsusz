@@ -20,16 +20,23 @@
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:text="@string/txtCity"
-	            android:textSize="20dp"
+	            android:textSize="20sp"
 	            android:textColor="@color/light_blue" />
 	
 	        <TextView
 	            android:id="@+id/cityString"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:textSize="20dp" />
+	            android:textSize="20sp" />
 		
 		</LinearLayout>
+		
+        <ImageView
+             android:id="@+id/imageView1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/line"
+             android:contentDescription="@string/list_view_icon_desc" />
 		 
         <TextView
             android:id="@+id/streetString"
