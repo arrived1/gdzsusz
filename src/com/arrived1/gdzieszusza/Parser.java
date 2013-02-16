@@ -1,6 +1,5 @@
 package com.arrived1.gdzieszusza;
 
-import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.Vector;
 

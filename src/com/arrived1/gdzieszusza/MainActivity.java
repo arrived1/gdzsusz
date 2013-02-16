@@ -12,10 +12,10 @@ public class MainActivity extends Activity{
         setContentView(R.layout.activity_main);
 
         //TODO: implement city getter
-        String cityName = "Wroclaw";
+		NetworkGeolocalization networkGeolocalization = new NetworkGeolocalization(this);
         
         //Instantiating the adapter
-        GiloAdapter mAdapter = new GiloAdapter(this, cityName);
+        GiloAdapter mAdapter = new GiloAdapter(this, networkGeolocalization.getCurrentCityName());
 
         //instantiate the Views
         ViewPager mPager = (ViewPager)findViewById(R.id.pager);

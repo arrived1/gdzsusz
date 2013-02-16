@@ -4,7 +4,7 @@ public class GetCityData {
 	private City city = null;
 	
 	public GetCityData(String cityName) {
-		if(cityName.equals("Wroclaw"))
+		if(cityName.equals("Wrocław"))
 			this.city = new City(cityName, "http://www.apteka-zwycieska.pl/gdzieSusza/wroclaw.html");
 		else
 			this.city = new City("", "");
