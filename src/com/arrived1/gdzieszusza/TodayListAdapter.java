@@ -1,7 +1,6 @@
 package com.arrived1.gdzieszusza;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Vector;
 import android.content.Context;
 import android.view.LayoutInflater;

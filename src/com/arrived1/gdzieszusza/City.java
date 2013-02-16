@@ -3,6 +3,7 @@ package com.arrived1.gdzieszusza;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.GregorianCalendar;
 import java.util.Vector;
 
 import org.apache.http.HttpResponse;
@@ -55,8 +56,8 @@ public class City {
 	    while ((line = reader.readLine()) != null) {
 	    	webPageBuffor += line + " ";
 	    }
-	     System.out.println("DUPA city size: " + webPageBuffor.length());
-	     System.out.println("DUPA city: " + webPageBuffor.toString());
+//	     System.out.println("DUPA city size: " + webPageBuffor.length());
+//	     System.out.println("DUPA city: " + webPageBuffor.toString());
 	}
 	 
 	public String getName() {
@@ -65,6 +66,20 @@ public class City {
 	
 	public Vector<Police> getData() {
 		return data;
+	}
+	
+	public Vector<Police> getTodayData() {
+		
+		//TODO: its working correctly, remmember about dirtyhack with months
+		Vector<Police> currentPolice = new Vector<Police>();
+		GregorianCalendar currentDate = new GregorianCalendar(2013, 2 - 1, 3); //TODO: only for tests, uncomment line below
+//		GregorianCalendar currentDate = new GregorianCalendar();
+		
+		for(int i = 0; i < data.size(); i++) {
+			if(data.elementAt(i).date.getTimeInMillis() == currentDate.getTimeInMillis())
+				currentPolice.addElement(data.elementAt(i));
+		}
+		return currentPolice;
 	}
 	
 	//TODO remove this method

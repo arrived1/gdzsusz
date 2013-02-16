@@ -1,14 +1,10 @@
 package com.arrived1.gdzieszusza;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
 
 import android.view.LayoutInflater;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 public class Today extends Tab{
@@ -24,13 +20,12 @@ public class Today extends Tab{
 		cityText.setText("Miasto: " + city.getName());
 		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-		Date date = new Date(); ;
+		Date date = new Date();
 		dateText.setText("Data: " + dateFormat.format(date));
 		
-		 TodayListAdapter adapter = new TodayListAdapter(view.getContext(), city.getData());
+		 TodayListAdapter adapter = new TodayListAdapter(view.getContext(), city.getTodayData());
 		 ListView listView = ( ListView )view.findViewById(R.id.listView);
 		 listView.setAdapter(adapter);
-
 	}
 
 }
