@@ -15,7 +15,7 @@ public class OtherDays extends Tab{
 		TextView cityText = (TextView)view.findViewById(R.id.cityString);
 		cityText.setText(" " + city.getName());
 		
-		TodayListAdapter adapter = new TodayListAdapter(view.getContext(), city.getTodayData());
+		TodayListAdapter adapter = new TodayListAdapter(view.getContext(), city.getOtherDaysData());
 		ListView listView = (ListView)view.findViewById(R.id.listViewOther);
 		listView.setAdapter(adapter);
 	}

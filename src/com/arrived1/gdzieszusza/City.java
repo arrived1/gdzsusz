@@ -81,4 +81,19 @@ public class City {
 		}
 		return currentPolice;
 	}
+	
+	public Vector<Police> getOtherDaysData() {
+		//TODO: its working correctly, remmember about dirtyhack with months
+		Vector<Police> currentPolice = new Vector<Police>();
+		GregorianCalendar tomorrowDate = new GregorianCalendar(2013, 2 - 1, 3 + 1); //TODO: only for tests, uncomment line below
+//		GregorianCalendar currentDate = new GregorianCalendar();
+//		GregorianCalendar tomorrowDate = new GregorianCalendar(currentDate.YEAR, currentDate.MONTH, currentDate.DAY_OF_MONTH + 1);
+		
+		for(int i = 0; i < data.size(); i++) {
+			if(data.elementAt(i).date.getTimeInMillis() == tomorrowDate.getTimeInMillis())
+				currentPolice.addElement(data.elementAt(i));
+		}
+		return currentPolice;
+		
+	}
 }

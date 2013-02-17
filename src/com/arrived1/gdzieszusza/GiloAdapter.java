@@ -49,17 +49,12 @@ class GiloAdapter extends PagerAdapter {
         	OtherDays secondPage = new OtherDays(inflater, R.layout.other_days, city);
         	view = secondPage.getView();
             break;	
-        case 3:
+        case 2:
         	FullVersion fullVersion = new FullVersion(inflater, R.layout.full_version);
         	view = fullVersion.getView();
         	break;
         default:
-        	final String[] desc = new String[]{
-        			"This is the homepage the first one you will see.",
-        			"I'm pretty much me for now I run this really cool blog you should check it out at mycodeandlife.wordpress.com",
-        			"I build appps mostly for fun. If you ever want an app just holla",
-        			"This is the android section",
-        			"This blog is my journal through life in code and development"};
+        	final String[] desc = new String[]{"Ups cos sie zepsulo :("};
         	
         	view = inflater.inflate(R.layout.page, null, false);
 
