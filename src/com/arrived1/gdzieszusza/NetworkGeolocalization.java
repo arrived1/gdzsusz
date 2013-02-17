@@ -22,7 +22,10 @@ public class NetworkGeolocalization {
 		
 		try {
 			addresses = gcd.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1);
-		} catch (IOException e) {
+		} 
+		catch (IOException e) {
+			//TODO: internet exception
+//			System.out.println("DUPA wYJATEK w GEOLOCAL!!");
 			e.printStackTrace();
 		}
 		

@@ -3,6 +3,7 @@ package com.arrived1.gdzieszusza;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+
 import com.viewpagerindicator.TabPageIndicator;
 
 public class MainActivity extends Activity{

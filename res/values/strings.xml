@@ -11,6 +11,8 @@
     <string name="txtDate">Data:</string>
     <string name="txtCity">Miasto:</string>
     
+     <string name="button">Mapy</string>
+    
     <string name="list_view_icon_desc">icon</string>
     
     <style name="ButtonText">
