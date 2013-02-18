@@ -12,6 +12,9 @@ public class MainActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        
+        WarningDialog warn = new WarningDialog(this); 
+        
         //TODO: implement city getter
 		NetworkGeolocalization networkGeolocalization = new NetworkGeolocalization(this);
         
