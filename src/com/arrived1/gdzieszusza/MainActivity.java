@@ -10,11 +10,9 @@ public class MainActivity extends Activity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main); 
+        
 
-        
-        WarningDialog warn = new WarningDialog(this); 
-        
         //TODO: implement city getter
 		NetworkGeolocalization networkGeolocalization = new NetworkGeolocalization(this);
         
@@ -27,5 +25,16 @@ public class MainActivity extends Activity{
 
         TabPageIndicator mIndicator = (TabPageIndicator)findViewById(R.id.indicator);
         mIndicator.setViewPager(mPager);
+
+    }
+    
+    private void checkoInternetConnection() {
+    	InternetAcces internetAcces = new InternetAcces(this);
+        boolean hasInternet = internetAcces.isOnline();
+        
+        if(!hasInternet) {
+        	WarningDialog dialog = new WarningDialog(this, "SDfsdf", "msg_");
+        }
+        
     }
 }

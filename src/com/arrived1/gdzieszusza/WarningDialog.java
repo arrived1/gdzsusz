@@ -7,20 +7,22 @@ import android.content.DialogInterface;
 
 public class WarningDialog extends Activity {
 	private Activity activity;
+	private String title;
+	private String msg;
 	
-	public WarningDialog(Activity activity_) {
+	public WarningDialog(Activity activity_, String title_, String msg_) {
 		this.activity = activity_;
-
+		this.title = title_;
+		this.msg = msg_;
 		
 		buildWarnDialog();
 	}
-	
-	
+
 	private void buildWarnDialog() {
 		Builder dialogBuilder = new AlertDialog.Builder(activity, AlertDialog.THEME_HOLO_DARK);
 		dialogBuilder.setIconAttribute(android.R.attr.alertDialogIcon);
-		dialogBuilder.setTitle("Argh");
-		dialogBuilder.setMessage("Watch out!");
+		dialogBuilder.setTitle(title);
+		dialogBuilder.setMessage(msg);
 		
 		dialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
