@@ -21,7 +21,7 @@ public class City {
 	private String name = "";
 	private String webPageAdress = "";
 	private String webPageBuffor = "";
-	private Vector<Police> data;
+	private Vector<Police> data = new Vector<Police>();
 	private Parser parser = new Parser();
 	
 	City(String name_, String webPageAdress_) {

@@ -10,7 +10,7 @@ import android.location.Location;
 import android.location.LocationManager;
 
 public class NetworkGeolocalization {
-	private String cityName = "";
+	private String cityName = null;
 	
 	public NetworkGeolocalization(Context context) {
 		LocationManager locMgr = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
@@ -21,18 +21,20 @@ public class NetworkGeolocalization {
 		
 		try {
 			addresses = gcd.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1);
+			cityName = addresses.get(0).getLocality();
 		} 
 		catch (IOException e) {
 			//TODO: internet exception
 //			System.out.println("DUPA wYJATEK w GEOLOCAL!!");
+			cityName = "Wrocław";
 			e.printStackTrace();
 		}
 		
-		cityName = addresses.get(0).getLocality();
+		
 	}
 	
 	public String getCurrentCityName() {
-		return cityName;
+			return cityName;
 	}
 	
 }
