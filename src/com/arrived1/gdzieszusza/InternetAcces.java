@@ -16,10 +16,11 @@ public class InternetAcces {
 		NetworkInfo netInfoWifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 		NetworkInfo netInfoMobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-		if (netInfoWifi != null && netInfoWifi.isConnectedOrConnecting() &&
-			netInfoMobile != null && netInfoMobile.isConnectedOrConnecting()) {
+		boolean isWifi = netInfoWifi != null && netInfoWifi.isConnectedOrConnecting();
+		boolean isMobile = netInfoMobile != null && netInfoMobile.isConnectedOrConnecting();
+		
+		if (isWifi || isMobile)
 			return true;
-		}
 		return false;
 	}
 }

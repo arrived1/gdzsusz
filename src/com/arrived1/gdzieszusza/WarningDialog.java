@@ -7,18 +7,26 @@ import android.content.DialogInterface;
 
 public class WarningDialog extends Activity {
 	private Activity activity;
-	private String title;
-	private String msg;
 	
-	public WarningDialog(Activity activity_, String title_, String msg_) {
+	public WarningDialog(Activity activity_) {
 		this.activity = activity_;
-		this.title = title_;
-		this.msg = msg_;
-		
-		buildWarnDialog();
 	}
 
-	private void buildWarnDialog() {
+	public void buildRestartDialog(String title, String msg) {
+		Builder dialogBuilder = new AlertDialog.Builder(activity, AlertDialog.THEME_HOLO_DARK);
+		dialogBuilder.setIconAttribute(android.R.attr.alertDialogIcon);
+		dialogBuilder.setTitle(title);
+		dialogBuilder.setMessage(msg);
+		
+		dialogBuilder.setNeutralButton("Wyłącz aplikacje", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+            	activity.finish();
+            }
+        });
+		dialogBuilder.show();
+	}
+	
+	public void buildWarnDialog(String title, String msg) {
 		Builder dialogBuilder = new AlertDialog.Builder(activity, AlertDialog.THEME_HOLO_DARK);
 		dialogBuilder.setIconAttribute(android.R.attr.alertDialogIcon);
 		dialogBuilder.setTitle(title);

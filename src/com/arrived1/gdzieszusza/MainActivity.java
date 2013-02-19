@@ -12,7 +12,8 @@ public class MainActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); 
         
-
+        checkoInternetConnection();
+        
         //TODO: implement city getter
 		NetworkGeolocalization networkGeolocalization = new NetworkGeolocalization(this);
         
@@ -33,7 +34,9 @@ public class MainActivity extends Activity{
         boolean hasInternet = internetAcces.isOnline();
         
         if(!hasInternet) {
-        	WarningDialog dialog = new WarningDialog(this, "SDfsdf", "msg_");
+        	WarningDialog dialog = new WarningDialog(this);
+        	dialog.buildRestartDialog("Błąd połaczcenia z internetem", 
+        			"Aplikacja wymaga połącznia z internetem w celu pobrania lub uaktualnienia danych. Właćż internet i uruchom aplikację ponownie!");
         }
         
     }
