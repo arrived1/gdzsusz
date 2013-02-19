@@ -24,13 +24,9 @@ public class NetworkGeolocalization {
 			cityName = addresses.get(0).getLocality();
 		} 
 		catch (IOException e) {
-			//TODO: internet exception
-//			System.out.println("DUPA wYJATEK w GEOLOCAL!!");
-			cityName = "Wrocław";
+			cityName = "Nieznane misto";
 			e.printStackTrace();
 		}
-		
-		
 	}
 	
 	public String getCurrentCityName() {

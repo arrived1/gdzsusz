@@ -49,15 +49,16 @@ public class City {
 	    HttpClient httpClient = new DefaultHttpClient();
 	    HttpContext localContext = new BasicHttpContext();
 	    HttpGet httpGet = new HttpGet(webPageAdress);
+	    
+	    //TODO when url do not exist it produce unknown exception !!!
 	    HttpResponse response = httpClient.execute(httpGet, localContext);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-
+        
+	    BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        
 	    String line = null;
 	    while ((line = reader.readLine()) != null) {
 	    	webPageBuffor += line + " ";
 	    }
-//	     System.out.println("DUPA city size: " + webPageBuffor.length());
-//	     System.out.println("DUPA city: " + webPageBuffor.toString());
 	}
 	 
 	public String getName() {

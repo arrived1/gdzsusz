@@ -1,14 +1,21 @@
 package com.arrived1.gdzieszusza;
 
+import android.app.Activity;
+
 public class GetCityData {
 	private City city = null;
 	
-	public GetCityData(String cityName) {
+	public GetCityData(String cityName, Activity activity_) {
 		if(cityName.equals("Wrocław"))
 			this.city = new City(cityName, "http://www.apteka-zwycieska.pl/gdzieSusza/wroclaw.html");
 		else {
-			//TODO: wrog city close aplication
-			this.city = new City("", "");
+			String title = "Błąd lokalizacji";
+        	String msg = "Aplikacja nie wspiera jeszcze wyszukiwania fotoradarów w mieście: " + cityName
+        				+ " Napisz do nas, aby dodać Twoje miasto w pierwszej kolejności!";
+        	WarningDialog dialog = new WarningDialog(activity_);
+        	dialog.buildRestartDialog(title, msg);
+        	
+			this.city = new City("Nieobsługiwane misto", "http://www.apteka-zwycieska.pl/gdzieSusza/empty.html");
 		}
 	}
 	

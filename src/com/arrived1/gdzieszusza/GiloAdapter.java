@@ -1,5 +1,6 @@
 package com.arrived1.gdzieszusza;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
@@ -13,10 +14,10 @@ class GiloAdapter extends PagerAdapter {
 	private Context context;
 	private City city;
 
-	public GiloAdapter(Context context_, String cityName){
+	public GiloAdapter(Context context_, Activity activity_, String cityName){
 		this.context = context_;
 
-		GetCityData getCityData = new GetCityData(cityName);
+		GetCityData getCityData = new GetCityData(cityName, activity_);
 		this.city = getCityData.getCity();
 	}
 
