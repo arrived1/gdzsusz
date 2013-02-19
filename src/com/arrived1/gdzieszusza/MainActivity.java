@@ -1,14 +1,21 @@
 package com.arrived1.gdzieszusza;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.ShareActionProvider;
+
 import com.viewpagerindicator.TabPageIndicator;
 
 //System.out.println("DUPA ");
 
 
 public class MainActivity extends Activity{
+	private ShareActionProvider myShareActionProvider;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,5 +48,22 @@ public class MainActivity extends Activity{
         	WarningDialog dialog = new WarningDialog(this);
         	dialog.buildRestartDialog(title, msg);
         }
+    }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	getMenuInflater().inflate(R.menu.menu, menu);
+		MenuItem item = menu.findItem(R.id.menu_item_share);
+		myShareActionProvider = (ShareActionProvider)item.getActionProvider();
+		myShareActionProvider.setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME);
+		myShareActionProvider.setShareIntent(createShareIntent());
+		return true;
+    }
+    
+    private Intent createShareIntent() {
+    	Intent shareIntent = new Intent(Intent.ACTION_SEND);
+    	shareIntent.setType("text/plain");
+    	shareIntent.putExtra(Intent.EXTRA_TEXT, "http://android-er.blogspot.com/");
+    	return shareIntent;
     }
 }
