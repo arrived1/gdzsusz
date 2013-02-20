@@ -61,6 +61,10 @@ public class MainActivity extends Activity{
 	        	Intent myIntentAboutPtogram = new Intent(MainActivity.this, AboutProgram.class);
 	            startActivity(myIntentAboutPtogram);
 	            return true;
+	        case R.id.mapka:
+	        	Intent myIntentAboutPtogramMapka = new Intent(MainActivity.this, Map.class);
+	            startActivity(myIntentAboutPtogramMapka);
+	            return true;
 	        case R.id.menu_item_share:
 	        	Intent sendIntent = new Intent();
 	        	sendIntent.setAction(Intent.ACTION_SEND);

@@ -7,6 +7,13 @@
         android:title="@string/menu_settings"
         android:icon="@drawable/ic_menu_star"/>
     
+     <item
+        android:id="@+id/mapka"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="mapa"
+        android:icon="@drawable/ic_menu_star"/>
+    
     <item 
         android:id="@+id/menu_item_share"
         android:showAsAction="ifRoom"
