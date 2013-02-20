@@ -14,6 +14,12 @@ class GiloAdapter extends PagerAdapter {
 	private Context context;
 	private City city;
 
+	public GiloAdapter(Context context_){
+		this.context = context_;
+		
+		city = new City();
+	}
+	
 	public GiloAdapter(Context context_, Activity activity_, String cityName){
 		this.context = context_;
 

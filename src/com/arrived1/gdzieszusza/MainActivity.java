@@ -21,12 +21,24 @@ public class MainActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); 
         
-        checkoInternetConnection();
+        InternetAcces internetAcces = new InternetAcces(this);
+        boolean hasInternet = internetAcces.isOnline();
+        GiloAdapter mAdapter = null;
 
-		NetworkGeolocalization networkGeolocalization = new NetworkGeolocalization(this);
-        
-        //Instantiating the adapter
-        GiloAdapter mAdapter = new GiloAdapter(this, this, networkGeolocalization.getCurrentCityName());
+        if(hasInternet) {
+        	NetworkGeolocalization networkGeolocalization = new NetworkGeolocalization(this);
+        	mAdapter = new GiloAdapter(this, this, networkGeolocalization.getCurrentCityName());
+        }
+        else {
+        	String title = "Błąd połaczcenia z internetem";
+        	String msg = "Aplikacja wymaga połącznia z internetem w celu pobrania lub uaktualnienia danych. " +
+        			     "Włącz internet i uruchom aplikację ponownie!";
+        	
+        	WarningDialog dialog = new WarningDialog(this);
+        	dialog.buildRestartDialog(title, msg);
+        	
+        	mAdapter = new GiloAdapter(this);
+        }
 
         //instantiate the Views
         ViewPager mPager = (ViewPager)findViewById(R.id.pager);

@@ -15,7 +15,7 @@ public class GetCityData {
         	WarningDialog dialog = new WarningDialog(activity_);
         	dialog.buildRestartDialog(title, msg);
         	
-			this.city = new City("Nieobsługiwane misto", "http://www.apteka-zwycieska.pl/gdzieSusza/empty.html");
+			this.city = new City();
 		}
 	}
 	

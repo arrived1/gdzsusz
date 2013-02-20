@@ -24,6 +24,12 @@ public class City {
 	private Vector<Police> data = new Vector<Police>();
 	private Parser parser = new Parser();
 	
+	
+	City() {
+		this.name = "Nieobsługiwane misto";
+		this.webPageAdress = "http://www.apteka-zwycieska.pl/gdzieSusza/empty.html";
+	}
+	
 	City(String name_, String webPageAdress_) {
 		this.name = name_;
 		this.webPageAdress = webPageAdress_;
