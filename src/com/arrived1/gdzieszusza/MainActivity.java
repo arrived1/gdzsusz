@@ -7,7 +7,6 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ShareActionProvider;
 
 import com.viewpagerindicator.TabPageIndicator;
 
@@ -15,7 +14,6 @@ import com.viewpagerindicator.TabPageIndicator;
 
 
 public class MainActivity extends Activity{
-	private ShareActionProvider myShareActionProvider;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
