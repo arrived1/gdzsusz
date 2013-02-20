@@ -15,6 +15,22 @@
     
     <string name="list_view_icon_desc">icon</string>
     
+    <string name="aboutProgramTxt">
+        Kiedy Przelew\n 
+        Copyright 2013\n\n\n
+        
+        Aplikacja pobiera czas dokonania przelewu, nazwę banku, z którego wykonano przelew oraz 
+        nazwę banku, do którego przelew został wysłany a następnie wyświetla, o której 
+        godzinie środki powinny pojawić sie w docelowym banku.\n\n
+        Podane czasy zaksiegowania przelewów zostały pobrane z oficjalnych stron polskich banków.\n\n\n
+        
+        Aplikacja storzona i opublikowana\n
+        przez arrived1\n\n\n
+        
+        © Wszelkie prawa zastrzeżone                            
+    </string>
+    
+    
     <style name="ButtonText">
 	    <item name="android:layout_width">fill_parent</item>
 	    <item name="android:layout_height">wrap_content</item>

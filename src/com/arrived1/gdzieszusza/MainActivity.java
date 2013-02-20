@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ShareActionProvider;
 
@@ -47,30 +48,45 @@ public class MainActivity extends Activity{
         TabPageIndicator mIndicator = (TabPageIndicator)findViewById(R.id.indicator);
         mIndicator.setViewPager(mPager);
     }
-
-    private void checkoInternetConnection() {
-    	InternetAcces internetAcces = new InternetAcces(this);
-        boolean hasInternet = internetAcces.isOnline();
-        
-        if(!hasInternet) {
-        	String title = "Błąd połaczcenia z internetem";
-        	String msg = "Aplikacja wymaga połącznia z internetem w celu pobrania lub uaktualnienia danych. " +
-        			     "Włącz internet i uruchom aplikację ponownie!";
-        	
-        	WarningDialog dialog = new WarningDialog(this);
-        	dialog.buildRestartDialog(title, msg);
-        }
-    }
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-    	getMenuInflater().inflate(R.menu.menu, menu);
-		MenuItem item = menu.findItem(R.id.menu_item_share);
-		myShareActionProvider = (ShareActionProvider)item.getActionProvider();
-		myShareActionProvider.setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME);
-		myShareActionProvider.setShareIntent(createShareIntent());
-		return true;
+    	MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.activity_main, menu);
+	    return true;
     }
+    
+    @Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case R.id.about_program:
+	        	Intent myIntentAboutPtogram = new Intent(MainActivity.this, AboutProgram.class);
+	            startActivity(myIntentAboutPtogram);
+	            return true;
+	        case R.id.menu_item_share:
+//	    		myShareActionProvider = (ShareActionProvider)item.getActionProvider();
+//	    		myShareActionProvider.setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME);
+//	    		myShareActionProvider.setShareIntent(createShareIntent());
+//	    		return true;
+	        	Intent sendIntent = new Intent();
+	        	sendIntent.setAction(Intent.ACTION_SEND);
+	        	sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+	        	sendIntent.setType("text/plain");
+	        	startActivity(Intent.createChooser(sendIntent, "An error has occurred! Send an error report?"));
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+    
+    
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//    	getMenuInflater().inflate(R.menu.menu, menu);
+//		MenuItem item = menu.findItem(R.id.menu_item_share);
+//		myShareActionProvider = (ShareActionProvider)item.getActionProvider();
+//		myShareActionProvider.setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME);
+//		myShareActionProvider.setShareIntent(createShareIntent());
+//		return true;
+//    }
     
     private Intent createShareIntent() {
     	Intent shareIntent = new Intent(Intent.ACTION_SEND);
