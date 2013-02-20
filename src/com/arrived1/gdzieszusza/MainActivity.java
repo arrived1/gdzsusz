@@ -64,34 +64,13 @@ public class MainActivity extends Activity{
 	            startActivity(myIntentAboutPtogram);
 	            return true;
 	        case R.id.menu_item_share:
-//	    		myShareActionProvider = (ShareActionProvider)item.getActionProvider();
-//	    		myShareActionProvider.setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME);
-//	    		myShareActionProvider.setShareIntent(createShareIntent());
-//	    		return true;
 	        	Intent sendIntent = new Intent();
 	        	sendIntent.setAction(Intent.ACTION_SEND);
-	        	sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
 	        	sendIntent.setType("text/plain");
-	        	startActivity(Intent.createChooser(sendIntent, "An error has occurred! Send an error report?"));
+	        	sendIntent.putExtra(Intent.EXTRA_TEXT, "Unikaj fotoradarów i Straży Miejskiej!"); //TODO: add Fecbook itp!!!
+	        	startActivity(Intent.createChooser(sendIntent, "Podziel sie aplikacją!"));
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
-    
-    
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//    	getMenuInflater().inflate(R.menu.menu, menu);
-//		MenuItem item = menu.findItem(R.id.menu_item_share);
-//		myShareActionProvider = (ShareActionProvider)item.getActionProvider();
-//		myShareActionProvider.setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME);
-//		myShareActionProvider.setShareIntent(createShareIntent());
-//		return true;
-//    }
-    
-    private Intent createShareIntent() {
-    	Intent shareIntent = new Intent(Intent.ACTION_SEND);
-    	shareIntent.setType("text/plain");
-    	shareIntent.putExtra(Intent.EXTRA_TEXT, "http://android-er.blogspot.com/");
-    	return shareIntent;
-    }
 }
