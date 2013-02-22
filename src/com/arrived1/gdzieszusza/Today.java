@@ -4,7 +4,7 @@ import android.view.LayoutInflater;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class Today extends Tab{
+public class Today extends Tab {
 	private City city;
 
 	public Today(LayoutInflater inflater_, int layout, City city_) {

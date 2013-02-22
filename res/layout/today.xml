@@ -62,12 +62,13 @@
 
     </LinearLayout>
         
-     <Button
+    <!-- <Button
+        android:id="@+id/buttonFacebook"
         style="@style/ButtonText"
         android:background="@drawable/blue_button"
         android:layout_gravity="bottom"
         android:text="@string/button"
         android:layout_below="@id/widgetGroup"
-        android:layout_marginBottom="50dp" />
+        android:layout_marginBottom="50dp" /> -->
 
 </RelativeLayout >
