@@ -2,7 +2,9 @@
 <resources>
 
     <string name="app_name">Gdzie Szuszą</string>
-    <string name="menu_settings">Settings</string>
+    <string name="menu_settings">O aplikacji</string>
+    <string name="menu_share">Udostępnij</string>
+    <string name="menu_cities">Miasta</string>
 
     <string name="streetString">Dzisiaj suszą na ulicach:</string>
     <string name="tomorrowStreetString">Jutro suszą na ulicach:</string>
@@ -11,10 +13,12 @@
     <string name="txtDate">Data:</string>
     <string name="txtCity">Miasto:</string>
     
-     <string name="button">Mapy</string>
+    
+    <string name="city_list_txt">Lista obsługiwanych miast:</string>
+    <string name="button">Mapy</string>
     
     <string name="list_view_icon_desc">icon</string>
-
+    
     <string name="aboutProgramTxt">
         Gdzie Suszą\n 
         Copyright 2013\n\n\n

@@ -57,14 +57,18 @@ public class MainActivity extends Activity{
     @Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
+	        case R.id.city_list:
+	        	Intent myIntentCityList = new Intent(MainActivity.this, CityList.class);
+	            startActivity(myIntentCityList);
+	            return true;
 	        case R.id.about_program:
 	        	Intent myIntentAboutPtogram = new Intent(MainActivity.this, AboutProgram.class);
 	            startActivity(myIntentAboutPtogram);
 	            return true;
-	        case R.id.mapka:
-	        	Intent myIntentAboutPtogramMapka = new Intent(MainActivity.this, Map.class);
-	            startActivity(myIntentAboutPtogramMapka);
-	            return true;
+//	        case R.id.mapka:
+//	        	Intent myIntentAboutPtogramMapka = new Intent(MainActivity.this, Map.class);
+//	            startActivity(myIntentAboutPtogramMapka);
+//	            return true;
 	        case R.id.menu_item_share:
 	        	Intent sendIntent = new Intent();
 	        	sendIntent.setAction(Intent.ACTION_SEND);
