@@ -14,15 +14,16 @@
      <string name="button">Mapy</string>
     
     <string name="list_view_icon_desc">icon</string>
-    
+
     <string name="aboutProgramTxt">
-        Kiedy Przelew\n 
+        Gdzie Suszą\n 
         Copyright 2013\n\n\n
         
-        Aplikacja pobiera czas dokonania przelewu, nazwę banku, z którego wykonano przelew oraz 
-        nazwę banku, do którego przelew został wysłany a następnie wyświetla, o której 
-        godzinie środki powinny pojawić sie w docelowym banku.\n\n
-        Podane czasy zaksiegowania przelewów zostały pobrane z oficjalnych stron polskich banków.\n\n\n
+        
+        Aplikacja podaje miejsca gdzie ma znajdować się Straż Miejska danego miasta z fotoradarami.\n\n
+        Lista obsługiwanych miast dostępna w zakładce Miasta w Menu głównym(Menu --> Miasta).\n\n
+        Liczba obsługiwanych miast jest ciągle rozwijana i powiększana.
+        Jeżeli na liście nie ma Twojego miasta, napisz do mnie, postaram się jak najszybciej dodać je do aplikacji!\n\n\n 
         
         Aplikacja storzona i opublikowana\n
         przez arrived1\n\n\n

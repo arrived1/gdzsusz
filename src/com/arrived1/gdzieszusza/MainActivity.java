@@ -69,8 +69,8 @@ public class MainActivity extends Activity{
 	        	Intent sendIntent = new Intent();
 	        	sendIntent.setAction(Intent.ACTION_SEND);
 	        	sendIntent.setType("text/plain");
-	        	sendIntent.putExtra(Intent.EXTRA_TEXT, "Unikaj fotoradarów i Straży Miejskiej!"); //TODO: add Fecbook itp!!!
-	        	startActivity(Intent.createChooser(sendIntent, "Podziel sie aplikacją!"));
+	        	sendIntent.putExtra(Intent.EXTRA_TEXT, "Gdzie Suszą: unikaj fotoradarów i Straży Miejskiej! Sprawdź aplikację!"); //TODO: add Fecbook itp!!!
+	        	startActivity(Intent.createChooser(sendIntent, "Podziel się aplikacją!"));
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }

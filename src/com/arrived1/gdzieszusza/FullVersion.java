@@ -14,7 +14,7 @@ public class FullVersion extends Tab {
 		TextView fullVerString = (TextView)view.findViewById(R.id.availableOptions);
 		fullVerString.setText("Pełna wersja zawiera:");
 		
-		String txt = "- ostrzega przed fotoradarami na ulicy gdzie prawdopodobnie jest fotoradar" +
+		String txt = "- ostrzega przed fotoradarami na ulicy gdzie prawdopodobnie jest fotoradar,\n" +
 				     "- ostrzega o przekroczeniu prędkości na ulicy gdzie jest fotoradar,\n" +
 				     "- aplikacja może działać w tle,\n" +
 					 "- szereg opcji konfiguracyjnych aplikację,\n" +
