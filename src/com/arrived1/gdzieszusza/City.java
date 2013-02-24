@@ -3,9 +3,9 @@ package com.arrived1.gdzieszusza;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Vector;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -81,9 +81,9 @@ public class City {
 //		GregorianCalendar currentDate = new GregorianCalendar(2013, 2 - 1, 3); //TODO: only for tests, uncomment line below
 		GregorianCalendar currentDateTmp = new GregorianCalendar();
 		GregorianCalendar currentDate = new GregorianCalendar(
-				currentDateTmp.get(currentDateTmp.YEAR), 
-				currentDateTmp.get(currentDateTmp.MONTH), 
-				currentDateTmp.get(currentDateTmp.DAY_OF_MONTH));
+				currentDateTmp.get(Calendar.YEAR), 
+				currentDateTmp.get(Calendar.MONTH), 
+				currentDateTmp.get(Calendar.DAY_OF_MONTH));
 		
 		for(int i = 0; i < data.size(); i++) {
 			if(data.elementAt(i).date.getTimeInMillis() == currentDate.getTimeInMillis())
@@ -98,9 +98,9 @@ public class City {
 //		GregorianCalendar tomorrowDate = new GregorianCalendar(2013, 2 - 1, 3 + 1); //TODO: only for tests, uncomment line below
 		GregorianCalendar currentDate = new GregorianCalendar();
 		GregorianCalendar tomorrowDate = new GregorianCalendar(
-				currentDate.get(currentDate.YEAR), 
-				currentDate.get(currentDate.MONTH), 
-				currentDate.get(currentDate.DAY_OF_MONTH) + 1);
+				currentDate.get(Calendar.YEAR), 
+				currentDate.get(Calendar.MONTH), 
+				currentDate.get(Calendar.DAY_OF_MONTH) + 1);
 		
 		for(int i = 0; i < data.size(); i++) {
 			if(data.elementAt(i).date.getTimeInMillis() == tomorrowDate.getTimeInMillis())
