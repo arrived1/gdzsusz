@@ -34,22 +34,43 @@ public class Parser {
 	}
 
 	private void analizeLine(String line) {
+		System.out.println("DUPA data: |" + line + "|");
 		String[] splitedLine = line.split(" ");
 		
 		String dateString = splitedLine[0];
-		String streetString = splitedLine[1];
+		System.out.println("DUPA data: |" + splitedLine[0] + "| size: " + splitedLine[0].length());
+
+		if(dateString.length() < 1)
+			dateString = splitedLine[1];
+
+		
+		String streetString = "";
+		for(int i = 1; i < splitedLine.length; i++) {
+			streetString += splitedLine[i];
+			if((i + 1) != splitedLine.length) {
+				streetString += " ";
+			}
+		}
+		
+		
 		
 		//TODO: dirtyHack for additional space in first element on the first call of the function
-		if(splitedLine.length > 2) {
-			dateString = splitedLine[1];
-			streetString = splitedLine[2];
-		}
+//		if(splitedLine.length > 2) {
+//			dateString = splitedLine[1];
+//			streetString = splitedLine[2];
+//		}
+//		
 		
 		String[] splitedDateString = dateString.split("\\.");
 
+		
 		String day = splitedDateString[0];
+//		System.out.println("DUPA " + day);
 		String month = splitedDateString[1];
+//		System.out.println("DUPA " + day + " " + month);
 		String year = splitedDateString[2];
+//		System.out.println("DUPA " + day + " " + month + " " + year);
+		
 		
 		//TODO: month - 1, dirty hack b-cos months in GregorianCalendar are counted from 0 to 11....
 		GregorianCalendar date = new GregorianCalendar(Integer.parseInt(year), Integer.parseInt(month) - 1, Integer.parseInt(day));

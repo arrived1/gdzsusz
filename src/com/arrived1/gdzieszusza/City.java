@@ -76,11 +76,14 @@ public class City {
 	}
 	
 	public Vector<Police> getTodayData() {
-		
 		//TODO: its working correctly, remmember about dirtyhack with months
 		Vector<Police> currentPolice = new Vector<Police>();
-		GregorianCalendar currentDate = new GregorianCalendar(2013, 2 - 1, 3); //TODO: only for tests, uncomment line below
-//		GregorianCalendar currentDate = new GregorianCalendar();
+//		GregorianCalendar currentDate = new GregorianCalendar(2013, 2 - 1, 3); //TODO: only for tests, uncomment line below
+		GregorianCalendar currentDateTmp = new GregorianCalendar();
+		GregorianCalendar currentDate = new GregorianCalendar(
+				currentDateTmp.get(currentDateTmp.YEAR), 
+				currentDateTmp.get(currentDateTmp.MONTH), 
+				currentDateTmp.get(currentDateTmp.DAY_OF_MONTH));
 		
 		for(int i = 0; i < data.size(); i++) {
 			if(data.elementAt(i).date.getTimeInMillis() == currentDate.getTimeInMillis())
@@ -92,9 +95,12 @@ public class City {
 	public Vector<Police> getOtherDaysData() {
 		//TODO: its working correctly, remmember about dirtyhack with months
 		Vector<Police> currentPolice = new Vector<Police>();
-		GregorianCalendar tomorrowDate = new GregorianCalendar(2013, 2 - 1, 3 + 1); //TODO: only for tests, uncomment line below
-//		GregorianCalendar currentDate = new GregorianCalendar();
-//		GregorianCalendar tomorrowDate = new GregorianCalendar(currentDate.YEAR, currentDate.MONTH, currentDate.DAY_OF_MONTH + 1);
+//		GregorianCalendar tomorrowDate = new GregorianCalendar(2013, 2 - 1, 3 + 1); //TODO: only for tests, uncomment line below
+		GregorianCalendar currentDate = new GregorianCalendar();
+		GregorianCalendar tomorrowDate = new GregorianCalendar(
+				currentDate.get(currentDate.YEAR), 
+				currentDate.get(currentDate.MONTH), 
+				currentDate.get(currentDate.DAY_OF_MONTH) + 1);
 		
 		for(int i = 0; i < data.size(); i++) {
 			if(data.elementAt(i).date.getTimeInMillis() == tomorrowDate.getTimeInMillis())
