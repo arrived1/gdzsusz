@@ -24,7 +24,7 @@ public class Today extends Tab {
 	}
 	
     private void addAdView() {
-		AdView ad = (AdView)view.findViewById(R.id.adView);
+		AdView ad = (AdView)view.findViewById(R.id.adView1);
 		ad.loadAd(new AdRequest());
 	}
     

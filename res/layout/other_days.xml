@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout  
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -50,7 +52,7 @@
     <LinearLayout
         android:id="@+id/widgetGroup"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="320dp"
         android:orientation="vertical" 
         android:layout_below="@id/txtGroup"
         android:layout_marginBottom="50dp">
@@ -66,5 +68,14 @@
             android:layout_gravity="bottom"
             android:text="Button" /> -->
     </LinearLayout>
+    
+    <com.google.ads.AdView 
+            android:id="@+id/adView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            ads:adUnitId="a1512a6cb98eb12"
+            ads:adSize="BANNER"
+            ads:loadAdsOnCreate="true" />
 
 </RelativeLayout >
