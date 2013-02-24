@@ -7,7 +7,6 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-
 import com.viewpagerindicator.TabPageIndicator;
 
 //System.out.println("DUPA ");
@@ -19,6 +18,7 @@ public class MainActivity extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); 
+
         
         InternetAcces internetAcces = new InternetAcces(this);
         boolean hasInternet = internetAcces.isOnline();
@@ -46,7 +46,7 @@ public class MainActivity extends Activity{
         TabPageIndicator mIndicator = (TabPageIndicator)findViewById(R.id.indicator);
         mIndicator.setViewPager(mPager);
     }
-    
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
     	MenuInflater inflater = getMenuInflater();
