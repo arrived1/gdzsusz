@@ -12,7 +12,7 @@ public class CityList extends Activity {
 		 super.onCreate(savedInstanceState);
 		 setContentView(R.layout.city_list);
 
-		 String[] list = new String[] { "Wrocław" };
+		 String[] list = new String[] { "Wrocław", "Poznań"};
 
 		 ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, list);
 		 ListView listView = (ListView)findViewById(R.id.cityListView);
