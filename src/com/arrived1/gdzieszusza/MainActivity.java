@@ -34,11 +34,7 @@ public class MainActivity extends Activity{
         	dialog.buildRestartDialog(title, msg);
     	}
     	else {
-
-		    InternetAcces internetAcces = new InternetAcces(this);
-		    boolean hasInternet = internetAcces.isOnline();
-		    
-		
+		    boolean hasInternet = networkAcces();
 		    if(hasInternet) {
 		    	NetworkGeolocalization networkGeolocalization = new NetworkGeolocalization(this, this);
 		    	mAdapter = new GiloAdapter(this, this, networkGeolocalization.getCurrentCityName());
@@ -97,5 +93,10 @@ public class MainActivity extends Activity{
 	private boolean wirlessNetworkLocalization() {
 		ContentResolver cr = this.getContentResolver();
 		return Settings.Secure.isLocationProviderEnabled(cr, LocationManager.NETWORK_PROVIDER);
+	}
+	
+	private boolean networkAcces() {
+		 InternetAcces internetAcces = new InternetAcces(this);
+		 return internetAcces.isOnline();
 	}
 }
