@@ -3,6 +3,8 @@ package com.arrived1.gdzieszusza;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
+
+import android.app.Activity;
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
@@ -10,9 +12,9 @@ import android.location.Location;
 import android.location.LocationManager;
 
 public class NetworkGeolocalization {
-	private String cityName = null;
+	private String cityName = "Nieznane misto";
 	
-	public NetworkGeolocalization(Context context) {
+	public NetworkGeolocalization(Context context, Activity activity) {
 		LocationManager locMgr = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
 		Location loc = locMgr.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 		
@@ -32,5 +34,5 @@ public class NetworkGeolocalization {
 	public String getCurrentCityName() {
 			return cityName;
 	}
-	
+
 }

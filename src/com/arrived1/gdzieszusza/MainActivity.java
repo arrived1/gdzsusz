@@ -1,8 +1,12 @@
 package com.arrived1.gdzieszusza;
 
 import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,26 +22,36 @@ public class MainActivity extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); 
-
+        GiloAdapter mAdapter =  new GiloAdapter(this);
         
-        InternetAcces internetAcces = new InternetAcces(this);
-        boolean hasInternet = internetAcces.isOnline();
-        GiloAdapter mAdapter = null;
-
-        if(hasInternet) {
-        	NetworkGeolocalization networkGeolocalization = new NetworkGeolocalization(this);
-        	mAdapter = new GiloAdapter(this, this, networkGeolocalization.getCurrentCityName());
-        }
-        else {
-        	String title = "Błąd połaczcenia z internetem";
-        	String msg = "Aplikacja wymaga połącznia z internetem w celu pobrania lub uaktualnienia danych. " +
-        			     "Włącz internet i uruchom aplikację ponownie!";
+        boolean hasLocalization = wirlessNetworkLocalization();
+    	if(!hasLocalization) {
+    		String title = "Błąd określenia lokalizacji";
+        	String msg = "Aplikacja wymaga Uruchomionej usługi określania lokalizacji na podstawie sieci WiFi lub telefonii komórkowej.\n" +
+        				 "Włącz usługi lokalizacji:\n \tUstawienia ->\n \tUsługi Lokalizacji ->\n \tUżyj Sieci Bezprzewodowych";
         	
         	WarningDialog dialog = new WarningDialog(this);
         	dialog.buildRestartDialog(title, msg);
-        	
-        	mAdapter = new GiloAdapter(this);
-        }
+    	}
+    	else {
+
+		    InternetAcces internetAcces = new InternetAcces(this);
+		    boolean hasInternet = internetAcces.isOnline();
+		    
+		
+		    if(hasInternet) {
+		    	NetworkGeolocalization networkGeolocalization = new NetworkGeolocalization(this, this);
+		    	mAdapter = new GiloAdapter(this, this, networkGeolocalization.getCurrentCityName());
+		    }
+		    else {
+		    	String title = "Błąd połaczcenia z internetem";
+		    	String msg = "Aplikacja wymaga połącznia z internetem w celu pobrania lub uaktualnienia danych. " +
+		    			     "Włącz internet i uruchom aplikację ponownie!";
+		    	
+		    	WarningDialog dialog = new WarningDialog(this);
+		    	dialog.buildRestartDialog(title, msg);
+		    }
+    	}
 
         //instantiate the Views
         ViewPager mPager = (ViewPager)findViewById(R.id.pager);
@@ -78,5 +92,10 @@ public class MainActivity extends Activity{
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
+	}
+    
+	private boolean wirlessNetworkLocalization() {
+		ContentResolver cr = this.getContentResolver();
+		return Settings.Secure.isLocationProviderEnabled(cr, LocationManager.NETWORK_PROVIDER);
 	}
 }
