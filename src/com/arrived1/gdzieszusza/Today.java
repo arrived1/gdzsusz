@@ -2,6 +2,8 @@ package com.arrived1.gdzieszusza;
 
 import com.google.ads.AdRequest;
 import com.google.ads.AdView;
+
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -9,7 +11,7 @@ import android.widget.TextView;
 public class Today extends Tab {
 	private City city;
 
-	public Today(LayoutInflater inflater_, int layout, City city_) {
+	public Today(LayoutInflater inflater_, int layout, City city_, Context context_) {
 		super(inflater_, layout);
 		this.city = city_;
 		
@@ -21,7 +23,7 @@ public class Today extends Tab {
 		TodayListAdapter adapter = new TodayListAdapter(view.getContext(), city.getTodayData());
 		ListView listView = (ListView)view.findViewById(R.id.listView);
 		listView.setAdapter(adapter);
-//		listView.setOnItemClickListener(new ListPickerOnItemClickListener());
+		listView.setOnItemClickListener(new ListPickerOnItemClickListener(context_));
 	}
 	
     private void addAdView() {

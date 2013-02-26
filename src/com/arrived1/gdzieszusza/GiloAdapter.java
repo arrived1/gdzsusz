@@ -49,7 +49,7 @@ class GiloAdapter extends PagerAdapter {
 		switch (position)
         {
         case 0:
-        	Today firstPage = new Today(inflater, R.layout.today, city);
+        	Today firstPage = new Today(inflater, R.layout.today, city, context);
         	view = firstPage.getView();
             break;
         case 1:
