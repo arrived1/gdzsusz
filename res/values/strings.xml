@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Gdzie Szuszą</string>
+    <string name="app_name">Gdzie Suszą</string>
     <string name="menu_settings">O aplikacji</string>
     <string name="menu_share">Udostępnij</string>
     <string name="menu_cities">Miasta</string>

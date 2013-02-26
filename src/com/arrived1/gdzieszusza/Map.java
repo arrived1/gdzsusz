@@ -50,4 +50,32 @@ public class Map extends Activity {
 //	    getMenuInflater().inflate(R.menu.activity_main, menu);
 //	    return true;
 //	  }
+	  
+
+//	  List<Address> addresses = geoCoder.getFromLocationName(txtsearch.getText().toString(),5);
+//
+//      if(addresses.size() > 0)
+//      {
+//           p = new GeoPoint( (int) (addresses.get(0).getLatitude() * 1E6), 
+//                            (int) (addresses.get(0).getLongitude() * 1E6));
+//
+//             controller.animateTo(p);
+//             controller.setZoom(12);
+//
+//             MapOverlay mapOverlay = new MapOverlay();
+//           List<Overlay> listOfOverlays = map.getOverlays();
+//           listOfOverlays.clear();
+//           listOfOverlays.add(mapOverlay);
+//
+//             map.invalidate();
+//             txtsearch.setText("");
+//      }
+//      else
+//      {
+//              AlertDialog.Builder adb = new AlertDialog.Builder(GoogleMap.this);
+//              adb.setTitle("Google Map");
+//              adb.setMessage("Please Provide the Proper Place");
+//              adb.setPositiveButton("Close",null);
+//              adb.show();
+//      }
 }

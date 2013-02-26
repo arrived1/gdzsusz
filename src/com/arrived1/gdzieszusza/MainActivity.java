@@ -83,6 +83,7 @@ public class MainActivity extends Activity{
 	        	sendIntent.setAction(Intent.ACTION_SEND);
 	        	sendIntent.setType("text/plain");
 	        	sendIntent.putExtra(Intent.EXTRA_TEXT, "Gdzie Suszą: unikaj fotoradarów i Straży Miejskiej! Sprawdź aplikację!"); //TODO: add Fecbook itp!!!
+	        	sendIntent.putExtra("image_url", R.drawable.ic_launcher);
 	        	startActivity(Intent.createChooser(sendIntent, "Podziel się aplikacją!"));
 	        default:
 	            return super.onOptionsItemSelected(item);
