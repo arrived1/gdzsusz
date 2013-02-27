@@ -35,7 +35,7 @@ public class MainActivity extends Activity{
     	else {
 		    boolean hasInternet = networkAcces();
 		    if(hasInternet) {
-		    	NetworkGeolocalization networkGeolocalization = new NetworkGeolocalization(this, this);
+		    	NetworkGeolocalizationCity networkGeolocalization = new NetworkGeolocalizationCity(this, this);
 		    	mAdapter = new GiloAdapter(this, this, networkGeolocalization.getCurrentCityName());
 		    }
 		    else {
