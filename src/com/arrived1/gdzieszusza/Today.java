@@ -2,6 +2,7 @@ package com.arrived1.gdzieszusza;
 
 import com.google.ads.AdRequest;
 import com.google.ads.AdView;
+import com.google.android.maps.GeoPoint;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -20,9 +21,13 @@ public class Today extends Tab {
 		TextView cityText = (TextView)view.findViewById(R.id.cityString);
 		cityText.setText(" " + city.getName());
 		
+		NetworkGeolocalizationStreet networkGeoLocalCity = new NetworkGeolocalizationStreet(context_, city.getName());
+		GeoPoint gp = networkGeoLocalCity.getGeoPoint();
+		
 		TodayListAdapter adapter = new TodayListAdapter(view.getContext(), city.getTodayData());
 		ListView listView = (ListView)view.findViewById(R.id.listView);
 		listView.setAdapter(adapter);
+//		listView.setOnItemClickListener(new ListPickerOnItemClickListener(context_, gp));
 		listView.setOnItemClickListener(new ListPickerOnItemClickListener(context_));
 	}
 	
