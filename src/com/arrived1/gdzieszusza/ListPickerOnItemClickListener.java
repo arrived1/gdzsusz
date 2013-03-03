@@ -1,7 +1,5 @@
 package com.arrived1.gdzieszusza;
 
-import com.google.android.maps.GeoPoint;
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
@@ -10,16 +8,14 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class ListPickerOnItemClickListener implements OnItemClickListener {
 	private Context context;
-	private GeoPoint geoPoint;
+	private double latitude = 0;
+	private double longitude = 0;
+
 	
-	public ListPickerOnItemClickListener(Context context_, GeoPoint gp_) {
+	public ListPickerOnItemClickListener(Context context_, double latitude_, double longitude_) {
 		this.context = context_;
-		this.geoPoint = gp_;
-	}
-	
-	public ListPickerOnItemClickListener(Context context_) {
-		this.context = context_;
-		this.geoPoint = null;
+		this.latitude = latitude_;
+		this.longitude = longitude_;
 	}
 
 	@Override
@@ -31,13 +27,10 @@ public class ListPickerOnItemClickListener implements OnItemClickListener {
 //		System.out.println("DUPA " + product);
 		
 		Intent myIntentAboutPtogramMapka = new Intent(context, Map.class);
-		System.out.println("DUPA Map LIST PICKER: " +  geoPoint.getLatitudeE6() + " " + geoPoint.getLongitudeE6());
-		
-		double latitude = geoPoint.getLatitudeE6();
-		double longtitude = geoPoint.getLongitudeE6();
+		System.out.println("DUPA Map LIST PICKER: " +  latitude + " " + longitude);
 		
 		myIntentAboutPtogramMapka.putExtra("GEO_POINT_LATITUDE", latitude);
-		myIntentAboutPtogramMapka.putExtra("GEO_POINT_LONGITUDE", longtitude);
+		myIntentAboutPtogramMapka.putExtra("GEO_POINT_LONGITUDE", longitude);
 		context.startActivity(myIntentAboutPtogramMapka);
 	}
 

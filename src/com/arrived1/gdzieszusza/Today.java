@@ -22,13 +22,13 @@ public class Today extends Tab {
 		cityText.setText(" " + city.getName());
 		
 		NetworkGeolocalizationStreet networkGeoLocalCity = new NetworkGeolocalizationStreet(context_, city.getName());
-		GeoPoint gp = networkGeoLocalCity.getGeoPoint();
+		double latitude = networkGeoLocalCity.getLatitudeE6();
+		double longitude = networkGeoLocalCity.getLongitudeE6();
 		
 		TodayListAdapter adapter = new TodayListAdapter(view.getContext(), city.getTodayData());
 		ListView listView = (ListView)view.findViewById(R.id.listView);
 		listView.setAdapter(adapter);
-		listView.setOnItemClickListener(new ListPickerOnItemClickListener(context_, gp));
-//		listView.setOnItemClickListener(new ListPickerOnItemClickListener(context_));
+		listView.setOnItemClickListener(new ListPickerOnItemClickListener(context_, latitude, longitude));
 	}
 	
     private void addAdView() {
