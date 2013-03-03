@@ -17,27 +17,27 @@ public class NetworkGeolocalizationStreet {
 	public NetworkGeolocalizationStreet(Context context_, String street_) {
 		this.context = context_;
 		
-//		Geocoder geoCoder = new Geocoder(context, Locale.getDefault());
-//		
-//	    try {
-//			addresses = geoCoder.getFromLocationName(street_, 5);
-//			System.out.println("DUPA wyjatek");
-//		} 
-//	    catch (IOException e) {
-//			e.printStackTrace();
-//		}
+		Geocoder geoCoder = new Geocoder(context, Locale.getDefault());
+		
+	    try {
+			addresses = geoCoder.getFromLocationName(street_, 5);
+		} 
+	    catch (IOException e) {
+	    	System.out.println("DUPA wyjatek NetworkGeolocalizationStreet");
+			e.printStackTrace();
+		}
 	}
 	
 	public GeoPoint getGeoPoint() {
 		GeoPoint gp = null;
-//		if(addresses.size() > 0) {
-//			System.out.println("DUPA znalazlem koordy");
-//			gp = new GeoPoint((int)(addresses.get(0).getLatitude() * 1E6), (int)(addresses.get(0).getLongitude() * 1E6));
-//		}
-//		else {
+		if(addresses.size() > 0) {
+			System.out.println("DUPA znalazlem koordy");
+			gp = new GeoPoint((int)(addresses.get(0).getLatitude() * 1E6), (int)(addresses.get(0).getLongitude() * 1E6));
+		}
+		else {
 			System.out.println("DUPA nie znalazlem koordow daje polske");
 			gp = new GeoPoint((int)(52 * 1E6), (int)(20 * 1E6));
-//		}
+		}
 		return gp;
 	}
 	

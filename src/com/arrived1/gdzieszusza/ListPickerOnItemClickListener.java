@@ -31,7 +31,14 @@ public class ListPickerOnItemClickListener implements OnItemClickListener {
 //		System.out.println("DUPA " + product);
 		
 		Intent myIntentAboutPtogramMapka = new Intent(context, Map.class);
-//		myIntentAboutPtogramMapka.putExtra("gp", "geoPoint");
+		System.out.println("DUPA Map LIST PICKER: " +  geoPoint.getLatitudeE6() + " " + geoPoint.getLongitudeE6());
+		
+		double latitude = geoPoint.getLatitudeE6();
+		double longtitude = geoPoint.getLongitudeE6();
+		
+		myIntentAboutPtogramMapka.putExtra("GEO_POINT_LATITUDE", latitude);
+		myIntentAboutPtogramMapka.putExtra("GEO_POINT_LONGITUDE", longtitude);
+		myIntentAboutPtogramMapka.putExtra("D", -1);
 		context.startActivity(myIntentAboutPtogramMapka);
 	}
 
