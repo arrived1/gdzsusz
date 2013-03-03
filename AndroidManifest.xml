@@ -36,9 +36,7 @@
         android:theme="@style/AppTheme" >
         
         <uses-library android:name="com.google.android.maps" />
-        
-        <!-- android:theme="@android:style/Theme.Holo" -->
-        <!-- android:theme="@style/AppTheme" -->
+
         <activity
             android:name="com.arrived1.gdzieszusza.MainActivity"
             android:theme="@style/Theme.PageIndicatorDefaults"
@@ -69,7 +67,7 @@
          
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyCFD1uQmq8-ExO_Q-xNkSli5YbC7C1iJHg" />
+            android:value="AIzaSyDJprB5-mc6JV7PIl9d0xgQneP-wfS4iV8" />
           
     </application>
 

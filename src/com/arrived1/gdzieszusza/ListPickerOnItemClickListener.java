@@ -38,7 +38,6 @@ public class ListPickerOnItemClickListener implements OnItemClickListener {
 		
 		myIntentAboutPtogramMapka.putExtra("GEO_POINT_LATITUDE", latitude);
 		myIntentAboutPtogramMapka.putExtra("GEO_POINT_LONGITUDE", longtitude);
-		myIntentAboutPtogramMapka.putExtra("D", -1);
 		context.startActivity(myIntentAboutPtogramMapka);
 	}
 

@@ -20,7 +20,7 @@ public class NetworkGeolocalizationStreet {
 		Geocoder geoCoder = new Geocoder(context, Locale.getDefault());
 		
 	    try {
-			addresses = geoCoder.getFromLocationName(street_, 5);
+			addresses = geoCoder.getFromLocationName(street_ + " Wrocław", 5);
 		} 
 	    catch (IOException e) {
 	    	System.out.println("DUPA wyjatek NetworkGeolocalizationStreet");
@@ -32,7 +32,10 @@ public class NetworkGeolocalizationStreet {
 		GeoPoint gp = null;
 		if(addresses.size() > 0) {
 			System.out.println("DUPA znalazlem koordy");
-			gp = new GeoPoint((int)(addresses.get(0).getLatitude() * 1E6), (int)(addresses.get(0).getLongitude() * 1E6));
+			System.out.println("DUPA znalazlem koordy lat: " + addresses.get(0).getLatitude() + " x1E6: " + (addresses.get(0).getLatitude() * 1E6));
+			System.out.println("DUPA znalazlem koordy long: " + addresses.get(0).getLongitude() + " x1E6: " + (addresses.get(0).getLongitude() * 1E6));
+//			gp = new GeoPoint((int)(addresses.get(0).getLatitude() * 1E6), (int)(addresses.get(0).getLongitude() * 1E6));
+			gp = new GeoPoint((int)(addresses.get(0).getLatitude()), (int)(addresses.get(0).getLongitude()));
 		}
 		else {
 			System.out.println("DUPA nie znalazlem koordow daje polske");
