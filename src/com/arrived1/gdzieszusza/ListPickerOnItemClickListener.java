@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
-import android.widget.TextView;
 
 public class ListPickerOnItemClickListener implements OnItemClickListener {
 	private Context context;
@@ -26,21 +24,14 @@ public class ListPickerOnItemClickListener implements OnItemClickListener {
 
 	@Override
 	public void onItemClick(AdapterView<?> adapter, View view, int position, long rowId) {
-		
-//		TextView textView1 = (TextView)view.findViewById(R.id.txt);
-//		
-//		String product = (String)textView1.getText();
-//		System.out.println("DUPA " + product);
-		
+
 		Police item = (Police)adapter.getItemAtPosition(position);
-		String s = item.street;
 		
-		NetworkGeolocalizationStreet networkGeoLocalCity = new NetworkGeolocalizationStreet(context, s);
+		NetworkGeolocalizationStreet networkGeoLocalCity = new NetworkGeolocalizationStreet(context, item.street);
 		latitude = networkGeoLocalCity.getLatitudeE6();
 		longitude = networkGeoLocalCity.getLongitudeE6();
 		
 		Intent myIntentAboutPtogramMapka = new Intent(context, Map.class);
-		System.out.println("DUPA Map LIST PICKER: " +  latitude + " " + longitude + " street: " + s);
 		
 		myIntentAboutPtogramMapka.putExtra("GEO_POINT_LATITUDE", latitude);
 		myIntentAboutPtogramMapka.putExtra("GEO_POINT_LONGITUDE", longitude);

@@ -17,19 +17,17 @@ public class NetworkGeolocalizationStreet {
 		
 	    try {
 			addresses = geoCoder.getFromLocationName(street_, 5);
-			System.out.println("DUPA GeolocalizatorStreet Street: " + street_ + " lat: " + addresses.get(0).getLatitude() + " long: " + addresses.get(0).getLongitude());
 		} 
 	    catch (IOException e) {
-	    	System.out.println("DUPA wyjatek NetworkGeolocalizationStreet");
 			e.printStackTrace();
 		}
 	}
 	
+	//WARNING: magic value 51, 17 Wrolcaw coords?
 	public double getLatitudeE6() {
 		if(addresses.size() > 0) {
 			return addresses.get(0).getLatitude();
 		}
-		System.out.println("DUPA nie znalazlem koordow daje polske");
 		return 51;
 	}
 	
@@ -37,12 +35,6 @@ public class NetworkGeolocalizationStreet {
 		if(addresses.size() > 0) {
 			return addresses.get(0).getLongitude();
 		}
-		System.out.println("DUPA nie znalazlem koordow daje polske");
 		return 17;
 	}
-	
-	
-	
-	
-	
 }
