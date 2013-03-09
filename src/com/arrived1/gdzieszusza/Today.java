@@ -2,8 +2,6 @@ package com.arrived1.gdzieszusza;
 
 import com.google.ads.AdRequest;
 import com.google.ads.AdView;
-import com.google.android.maps.GeoPoint;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.ListView;
@@ -20,15 +18,15 @@ public class Today extends Tab {
 
 		TextView cityText = (TextView)view.findViewById(R.id.cityString);
 		cityText.setText(" " + city.getName());
-		
-		NetworkGeolocalizationStreet networkGeoLocalCity = new NetworkGeolocalizationStreet(context_, city.getName());
-		double latitude = networkGeoLocalCity.getLatitudeE6();
-		double longitude = networkGeoLocalCity.getLongitudeE6();
+//      //CITY:		
+//		NetworkGeolocalizationStreet networkGeoLocalCity = new NetworkGeolocalizationStreet(context_, city.getName());
+//		double latitude = networkGeoLocalCity.getLatitudeE6();
+//		double longitude = networkGeoLocalCity.getLongitudeE6();
 		
 		TodayListAdapter adapter = new TodayListAdapter(view.getContext(), city.getTodayData());
 		ListView listView = (ListView)view.findViewById(R.id.listView);
 		listView.setAdapter(adapter);
-		listView.setOnItemClickListener(new ListPickerOnItemClickListener(context_, latitude, longitude));
+		listView.setOnItemClickListener(new ListPickerOnItemClickListener(context_));
 	}
 	
     private void addAdView() {

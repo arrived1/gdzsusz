@@ -3,9 +3,6 @@ package com.arrived1.gdzieszusza;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
-
-import com.google.android.maps.GeoPoint;
-
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
@@ -16,7 +13,6 @@ public class NetworkGeolocalizationStreet {
 	
 	public NetworkGeolocalizationStreet(Context context_, String street_) {
 		this.context = context_;
-		
 		Geocoder geoCoder = new Geocoder(context, Locale.getDefault());
 		
 	    try {

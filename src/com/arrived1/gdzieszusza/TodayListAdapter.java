@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class TodayListAdapter extends ArrayAdapter<Police> {
     private final Context context;
 	private final Vector<Police> values;
+	private String strretName = "";
  
 	public TodayListAdapter(Context context, Vector<Police> values) {
 		super(context, R.layout.listview_layout, values);
@@ -27,6 +28,7 @@ public class TodayListAdapter extends ArrayAdapter<Police> {
 		
 		TextView textView1 = (TextView)rowView.findViewById(R.id.txt);
 		textView1.setText(" " + values.elementAt(position).street);
+		strretName = " " + values.elementAt(position).street;
 		
 		TextView textView2 = (TextView)rowView.findViewById(R.id.date);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
@@ -36,5 +38,9 @@ public class TodayListAdapter extends ArrayAdapter<Police> {
 		imageView.setImageResource(R.drawable.ic);
  
 		return rowView;
+	}
+	
+	public String getSelectedStreetName() {
+		return strretName;
 	}
 }
