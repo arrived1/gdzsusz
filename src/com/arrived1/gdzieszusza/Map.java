@@ -26,9 +26,6 @@ public class Map extends Activity {
 		latitude = extras.getDouble("GEO_POINT_LATITUDE");
 	    longitude = extras.getDouble("GEO_POINT_LONGITUDE");
 	
-//	    System.out.println("DUPA Map przesylam geopoint, putExtra!!! latitude: " + latitude);
-//	    System.out.println("DUPA Map przesylam geopoint, putExtra!!! longitude: " + longitude);
-	
 	    LatLng coordinates = new LatLng(latitude, longitude);
 	    
 	    MarkerOptions markOpt = new MarkerOptions();

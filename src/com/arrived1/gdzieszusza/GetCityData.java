@@ -14,8 +14,10 @@ public class GetCityData {
 			String title = "Błąd lokalizacji";
         	String msg = "Aplikacja nie wspiera jeszcze wyszukiwania fotoradarów w mieście: " + cityName
         				+ " Napisz do nas, aby dodać Twoje miasto w pierwszej kolejności!";
-        	WarningDialog dialog = new WarningDialog(activity_);
+        	DialogBuilder dialog = new DialogBuilder(activity_);
         	dialog.buildRestartDialog(title, msg);
+//			DialogBuilder dialog = new DialogBuilder(activity_);
+//			dialog.buildeChooseCityDialog(title);
         	
 			this.city = new City();
 		}

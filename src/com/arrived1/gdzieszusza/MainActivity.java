@@ -29,7 +29,7 @@ public class MainActivity extends Activity{
         	String msg = "Aplikacja wymaga Uruchomionej usługi określania lokalizacji na podstawie sieci WiFi lub telefonii komórkowej.\n" +
         				 "Włącz usługi lokalizacji:\n \tUstawienia ->\n \tUsługi Lokalizacji ->\n \tUżyj Sieci Bezprzewodowych";
         	
-        	WarningDialog dialog = new WarningDialog(this);
+        	DialogBuilder dialog = new DialogBuilder(this);
         	dialog.buildRestartDialog(title, msg);
     	}
     	else {
@@ -43,7 +43,7 @@ public class MainActivity extends Activity{
 		    	String msg = "Aplikacja wymaga połącznia z internetem w celu pobrania lub uaktualnienia danych. " +
 		    			     "Włącz internet i uruchom aplikację ponownie!";
 		    	
-		    	WarningDialog dialog = new WarningDialog(this);
+		    	DialogBuilder dialog = new DialogBuilder(this);
 		    	dialog.buildRestartDialog(title, msg);
 		    }
     	}
@@ -67,17 +67,13 @@ public class MainActivity extends Activity{
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
 	        case R.id.city_list:
-	        	Intent myIntentCityList = new Intent(MainActivity.this, CityList.class);
+	        	Intent myIntentCityList = new Intent(MainActivity.this, CityListActivity.class);
 	            startActivity(myIntentCityList);
 	            return true;
 	        case R.id.about_program:
 	        	Intent myIntentAboutPtogram = new Intent(MainActivity.this, AboutProgram.class);
 	            startActivity(myIntentAboutPtogram);
 	            return true;
-//	        case R.id.mapka:
-//	        	Intent myIntentAboutPtogramMapka = new Intent(MainActivity.this, Map.class);
-//	            startActivity(myIntentAboutPtogramMapka);
-//	            return true;
 	        case R.id.menu_item_share:
 	        	Intent sendIntent = new Intent();
 	        	sendIntent.setAction(Intent.ACTION_SEND);

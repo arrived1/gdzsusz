@@ -6,20 +6,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class ListPickerOnItemClickListener implements OnItemClickListener {
+public class StreetOnItemClickListener implements OnItemClickListener {
+	private String city = "";
 	private Context context;
 	private double latitude = 0;
 	private double longitude = 0;
-
 	
-	public ListPickerOnItemClickListener(Context context_, double latitude_, double longitude_) {
+	public StreetOnItemClickListener(Context context_, String city_) {
 		this.context = context_;
-		this.latitude = latitude_;
-		this.longitude = longitude_;
-	}
-	
-	public ListPickerOnItemClickListener(Context context_) {
-		this.context = context_;	
+		this.city = city_;
 	}
 
 	@Override
@@ -27,7 +22,8 @@ public class ListPickerOnItemClickListener implements OnItemClickListener {
 
 		Police item = (Police)adapter.getItemAtPosition(position);
 		
-		NetworkGeolocalizationStreet networkGeoLocalCity = new NetworkGeolocalizationStreet(context, item.street);
+		String streetAndCity = item.street + " " + city;
+		NetworkGeolocalizationStreet networkGeoLocalCity = new NetworkGeolocalizationStreet(context, streetAndCity);
 		latitude = networkGeoLocalCity.getLatitudeE6();
 		longitude = networkGeoLocalCity.getLongitudeE6();
 		
