@@ -2,6 +2,9 @@ package com.arrived1.gdzieszusza;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -20,6 +23,9 @@ public class Map extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	    setContentView(R.layout.map);
+	    
+	    addAdView();
+	    
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 		 
 		Bundle extras = getIntent().getExtras();
@@ -37,5 +43,10 @@ public class Map extends Activity {
 	
 		map.moveCamera(CameraUpdateFactory.newLatLngZoom(coordinates, 15));
 		map.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);  
-  }
+	}
+	
+	private void addAdView() {
+		AdView ad = (AdView)findViewById(R.id.adView1);
+		ad.loadAd(new AdRequest());
+	}
 }
