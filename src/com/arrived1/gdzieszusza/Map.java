@@ -2,7 +2,6 @@ package com.arrived1.gdzieszusza;
 
 import android.app.Activity;
 import android.os.Bundle;
-
 import com.google.ads.AdRequest;
 import com.google.ads.AdView;
 import com.google.android.gms.maps.CameraUpdateFactory;
