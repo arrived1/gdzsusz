@@ -27,7 +27,7 @@ public class StreetOnItemClickListener implements OnItemClickListener {
 		latitude = networkGeoLocalCity.getLatitudeE6();
 		longitude = networkGeoLocalCity.getLongitudeE6();
 		
-		Intent myIntentAboutPtogramMapka = new Intent(context, Map.class);
+		Intent myIntentAboutPtogramMapka = new Intent(context, MapActivity.class);
 		
 		myIntentAboutPtogramMapka.putExtra("GEO_POINT_LATITUDE", latitude);
 		myIntentAboutPtogramMapka.putExtra("GEO_POINT_LONGITUDE", longitude);
