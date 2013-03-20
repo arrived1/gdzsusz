@@ -25,5 +25,9 @@ public class FullVersion extends Tab {
 		
 		TextView fullVerDescribtion = (TextView)view.findViewById(R.id.availableOptionsList);
 		fullVerDescribtion.setText(txt);
+		
+		
+		TextView whenVerString = (TextView)view.findViewById(R.id.when);
+		whenVerString.setText("Wkrótce!");
 	}
 }
