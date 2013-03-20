@@ -41,7 +41,6 @@ public class NetworkGeolocalizationCity {
 			cityName = addresses.get(0).getLocality();
 		} 
 		catch (IOException e) {
-			System.out.println("DUPA wyjatek");
 			cityName = "Nieznane misto";
 			e.printStackTrace();
 		}
