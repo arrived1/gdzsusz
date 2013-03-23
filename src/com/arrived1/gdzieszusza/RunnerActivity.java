@@ -1,52 +1,26 @@
 package com.arrived1.gdzieszusza;
 
 import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Intent;
-import android.location.LocationManager;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import com.viewpagerindicator.TabPageIndicator;
 
-//System.out.println("DUPA ");
 
-
-public class RunnerActivity extends Activity{
-	
-    @Override
+public class RunnerActivity extends Activity {
+    
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.runner_activity); 
-        GiloAdapter mAdapter =  new GiloAdapter(this);
         
-        boolean hasLocalization = wirlessNetworkLocalization();
-    	if(!hasLocalization) {
-    		String title = "Błąd określenia lokalizacji";
-        	String msg = "Aplikacja wymaga Uruchomionej usługi określania lokalizacji na podstawie sieci WiFi lub telefonii komórkowej.\n" +
-        				 "Włącz usługi lokalizacji:\n \tUstawienia ->\n \tUsługi Lokalizacji ->\n \tUżyj Sieci Bezprzewodowych";
-        	
-        	DialogBuilder dialog = new DialogBuilder(this);
-        	dialog.buildRestartDialog(title, msg);
-    	}
-    	else {
-		    boolean hasInternet = networkAcces();
-		    if(hasInternet) {
-		    	NetworkGeolocalizationCity networkGeolocalization = new NetworkGeolocalizationCity(this, this);
-		    	mAdapter = new GiloAdapter(this, this, networkGeolocalization.getCurrentCityName());
-		    }
-		    else {
-		    	String title = "Błąd połaczcenia z internetem";
-		    	String msg = "Aplikacja wymaga połącznia z internetem w celu pobrania lub uaktualnienia danych. " +
-		    			     "Włącz internet i uruchom aplikację ponownie!";
-		    	
-		    	DialogBuilder dialog = new DialogBuilder(this);
-		    	dialog.buildRestartDialog(title, msg);
-		    }
-    	}
+        Bundle extras = getIntent().getExtras();
+		String cityName = extras.getString("CITY_NAME");
+        
+        GiloAdapter mAdapter = new GiloAdapter(this, this, cityName);   
 
         //instantiate the Views
         ViewPager mPager = (ViewPager)findViewById(R.id.pager);
@@ -84,15 +58,5 @@ public class RunnerActivity extends Activity{
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
-	}
-    
-	private boolean wirlessNetworkLocalization() {
-		ContentResolver cr = this.getContentResolver();
-		return Settings.Secure.isLocationProviderEnabled(cr, LocationManager.NETWORK_PROVIDER);
-	}
-	
-	private boolean networkAcces() {
-		 InternetAcces internetAcces = new InternetAcces(this);
-		 return internetAcces.isOnline();
 	}
 }
