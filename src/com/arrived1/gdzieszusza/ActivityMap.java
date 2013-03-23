@@ -12,7 +12,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.maps.GeoPoint;
 
-public class MapActivity extends Activity {
+public class ActivityMap extends Activity {
 	public GeoPoint gp;
 	public double latitude = 0;
 	public double longitude = 0;

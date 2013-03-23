@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import com.viewpagerindicator.TabPageIndicator;
 
 
-public class RunnerActivity extends Activity {
+public class ActivityRunner extends Activity {
     
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,11 +41,11 @@ public class RunnerActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
 	        case R.id.city_list:
-	        	Intent myIntentCityList = new Intent(RunnerActivity.this, CityListActivity.class);
+	        	Intent myIntentCityList = new Intent(ActivityRunner.this, ActivityCityList.class);
 	            startActivity(myIntentCityList);
 	            return true;
 	        case R.id.about_program:
-	        	Intent myIntentAboutPtogram = new Intent(RunnerActivity.this, AboutProgram.class);
+	        	Intent myIntentAboutPtogram = new Intent(ActivityRunner.this, ActivityAboutProgram.class);
 	            startActivity(myIntentAboutPtogram);
 	            return true;
 	        case R.id.menu_item_share:

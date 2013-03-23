@@ -19,7 +19,7 @@ public class OnItemClickListenerCity implements OnItemClickListener {
 
 		String city = (String)adapter.getItemAtPosition(position);
 		
-		Intent myIntent = new Intent(context, RunnerActivity.class);
+		Intent myIntent = new Intent(context, ActivityRunner.class);
     	myIntent.putExtra("CITY_NAME", city);
     	context.startActivity(myIntent);
     	

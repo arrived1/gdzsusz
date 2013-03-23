@@ -21,11 +21,11 @@ public class MainActivity extends Activity {
         
         if(cityName.equals(unnamedCity)) {
         	 
-        	 Intent myIntent = new Intent(this, CityManulaPickerActivity.class);
+        	 Intent myIntent = new Intent(this, ActivityCityManulaPicker.class);
         	 startActivity(myIntent);
         }
         else { 
-        	Intent myIntent = new Intent(this, RunnerActivity.class);
+        	Intent myIntent = new Intent(this, ActivityRunner.class);
         	myIntent.putExtra("CITY_NAME", cityName);
         	startActivity(myIntent);
         }

@@ -47,30 +47,28 @@
             </intent-filter>
         </activity>
         
-        
-        
         <activity
-            android:name="RunnerActivity"
+            android:name="ActivityRunner"
             android:theme="@style/Theme.PageIndicatorDefaults" 
             android:label="@string/app_name" />
         
         <activity
-            android:name="CityManulaPickerActivity"
+            android:name="ActivityCityManulaPicker"
             android:theme="@style/Theme.PageIndicatorDefaults" 
             android:label="@string/app_name" />
         
         <activity
-            android:name="AboutProgram"
+            android:name="ActivityAboutProgram"
             android:theme="@style/Theme.PageIndicatorDefaults" 
             android:label="@string/app_name" />
         
          <activity
-            android:name="CityListActivity"
+            android:name="ActivityCityList"
             android:theme="@style/Theme.PageIndicatorDefaults" 
             android:label="@string/app_name" />
         
         <activity
-            android:name="MapActivity"
+            android:name="ActivityMap"
             android:theme="@style/Theme.PageIndicatorDefaults" 
             android:label="@string/app_name" />
         

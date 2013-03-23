@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class CityListActivity extends Activity {
+public class ActivityCityList extends Activity {
 	private CityList cities = new CityList();
 	
 	@Override

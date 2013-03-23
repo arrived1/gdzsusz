@@ -6,7 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class CityManulaPickerActivity extends Activity {
+public class ActivityCityManulaPicker extends Activity {
 	
 	private CityList cities = new CityList();
 	  
