@@ -10,7 +10,8 @@ import android.provider.Settings;
 //System.out.println("DUPA ");
 
 
-public class MainActivity extends Activity{
+public class MainActivity extends Activity {
+	private String unnamedCity = "Nieznane misto";
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -20,20 +21,22 @@ public class MainActivity extends Activity{
         String cityName = check();
         System.out.println("DUPA city name: " + cityName);
         
-        if(cityName.equals("Nieznane misto")) {
+        if(cityName.equals(unnamedCity)) {
         	 System.out.println("DUPA city: " + "Nieznane misto");
+        	 
+        	 Intent myIntent = new Intent(this, CityManulaPickerActivity.class);
+        	 startActivity(myIntent);
         }
         else { 
         	Intent myIntent = new Intent(this, RunnerActivity.class);
         	myIntent.putExtra("CITY_NAME", cityName);
         	startActivity(myIntent);
         }
-        
         finish();
     }
     
     private String check() {
-    	 boolean hasLocalization = wirlessNetworkLocalization();
+    	boolean hasLocalization = wirlessNetworkLocalization();
      	if(!hasLocalization) {
      		String title = "Błąd określenia lokalizacji";
          	String msg = "Aplikacja wymaga Uruchomionej usługi określania lokalizacji na podstawie sieci WiFi lub telefonii komórkowej.\n" +
@@ -50,7 +53,7 @@ public class MainActivity extends Activity{
  		    		networkGeolocalization = new NetworkGeolocalizationCity(this, this);
  		    		System.out.println("DUPA geolokalizator zwrocil: " + networkGeolocalization.getCurrentCityName());
  		    		
- 		    		if(!networkGeolocalization.getCurrentCityName().equals("Nieznane misto"))
+ 		    		if(!networkGeolocalization.getCurrentCityName().equals(unnamedCity))
  		    			return networkGeolocalization.getCurrentCityName();
  		    	}
  		    	return networkGeolocalization.getCurrentCityName();
@@ -64,7 +67,7 @@ public class MainActivity extends Activity{
  		    	dialog.buildRestartDialog(title, msg);
  		    }
      	}
-     	return "Nieznane misto";
+     	return unnamedCity;
     }
     	
 	private boolean wirlessNetworkLocalization() {

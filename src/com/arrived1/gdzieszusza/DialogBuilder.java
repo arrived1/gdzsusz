@@ -31,8 +31,7 @@ public class DialogBuilder extends Activity {
 		dialogBuilder.setTitle(title);
 		
 		CityList cities = new CityList();
-		CityOnClickListener listener = new CityOnClickListener();
-		dialogBuilder.setItems(cities.getCityList(), listener);
+		dialogBuilder.setItems(cities.getCityList(), new CityOnClickListener());
 		dialogBuilder.show();
 		
 	}
