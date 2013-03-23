@@ -47,8 +47,15 @@
             </intent-filter>
         </activity>
         
+        
+        
         <activity
             android:name="RunnerActivity"
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+            android:label="@string/app_name" />
+        
+        <activity
+            android:name="CityManulaPickerActivity"
             android:theme="@style/Theme.PageIndicatorDefaults" 
             android:label="@string/app_name" />
         

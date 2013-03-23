@@ -16,13 +16,10 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_main); 
 
         String cityName = check();
-        System.out.println("DUPA city name: " + cityName);
         
         if(cityName.equals(unnamedCity)) {
-        	 System.out.println("DUPA city: " + "Nieznane misto");
         	 
         	 Intent myIntent = new Intent(this, CityManulaPickerActivity.class);
         	 startActivity(myIntent);
@@ -51,7 +48,6 @@ public class MainActivity extends Activity {
  		    	NetworkGeolocalizationCity networkGeolocalization = null;;
  		    	for(int i = 0; i < 10; i++) {
  		    		networkGeolocalization = new NetworkGeolocalizationCity(this, this);
- 		    		System.out.println("DUPA geolokalizator zwrocil: " + networkGeolocalization.getCurrentCityName());
  		    		
  		    		if(!networkGeolocalization.getCurrentCityName().equals(unnamedCity))
  		    			return networkGeolocalization.getCurrentCityName();
