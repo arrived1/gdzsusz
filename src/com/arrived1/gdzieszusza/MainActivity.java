@@ -12,6 +12,7 @@ import android.provider.Settings;
 
 public class MainActivity extends Activity {
 	private String unnamedCity = "Nieznane misto";
+	private String error = "ERROR";
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,8 +20,10 @@ public class MainActivity extends Activity {
 
         String cityName = check();
         
-        if(cityName.equals(unnamedCity)) {
-        	 
+        //TODO: refactor it
+        if(cityName.equals(error)) {
+        }
+        else if(cityName.equals(unnamedCity)) {
         	 Intent myIntent = new Intent(this, ActivityCityManulaPicker.class);
         	 startActivity(myIntent);
         }
@@ -29,7 +32,6 @@ public class MainActivity extends Activity {
         	myIntent.putExtra("CITY_NAME", cityName);
         	startActivity(myIntent);
         }
-        finish();
     }
     
     private String check() {
@@ -41,6 +43,8 @@ public class MainActivity extends Activity {
          	
          	DialogBuilder dialog = new DialogBuilder(this);
          	dialog.buildRestartDialog(title, msg);
+         	
+         	return error;
      	}
      	else {
  		    boolean hasInternet = networkAcces();
@@ -55,15 +59,16 @@ public class MainActivity extends Activity {
  		    	return networkGeolocalization.getCurrentCityName();
  		    }
  		    else {
- 		    	String title = "Błąd połaczcenia z internetem";
+ 		    	String title = "Błąd połączenia z internetem";
  		    	String msg = "Aplikacja wymaga połącznia z internetem w celu pobrania lub uaktualnienia danych. " +
  		    			     "Włącz internet i uruchom aplikację ponownie!";
  		    	
  		    	DialogBuilder dialog = new DialogBuilder(this);
  		    	dialog.buildRestartDialog(title, msg);
+ 		    	
+ 		    	return error;
  		    }
      	}
-     	return unnamedCity;
     }
     	
 	private boolean wirlessNetworkLocalization() {

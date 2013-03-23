@@ -13,8 +13,17 @@ public class DialogBuilder extends Activity {
 	}
 
 	public void buildRestartDialog(String title, String msg) {
-		Builder dialogBuilder = new AlertDialog.Builder(activity, AlertDialog.THEME_HOLO_DARK);
-		dialogBuilder.setIconAttribute(android.R.attr.alertDialogIcon);
+		checkAndroidVersion();
+		
+		Builder dialogBuilder;
+		if(checkAndroidVersion() < 11) {
+			dialogBuilder = new AlertDialog.Builder(activity);
+		}
+		else {
+			dialogBuilder = new AlertDialog.Builder(activity, AlertDialog.THEME_HOLO_DARK);
+			dialogBuilder.setIconAttribute(android.R.attr.alertDialogIcon);	
+		}
+
 		dialogBuilder.setTitle(title);
 		dialogBuilder.setMessage(msg);
 		
@@ -27,12 +36,24 @@ public class DialogBuilder extends Activity {
 	}
 	
 	public void buildeChooseCityDialog(String title) {
-		Builder dialogBuilder = new AlertDialog.Builder(activity, AlertDialog.THEME_HOLO_DARK);
+		Builder dialogBuilder;
+		if(checkAndroidVersion() < 11) {
+			dialogBuilder = new AlertDialog.Builder(activity);
+		}
+		else {
+			dialogBuilder = new AlertDialog.Builder(activity, AlertDialog.THEME_HOLO_DARK);
+			dialogBuilder.setIconAttribute(android.R.attr.alertDialogIcon);	
+		}
+
 		dialogBuilder.setTitle(title);
 		
 		CityList cities = new CityList();
 		dialogBuilder.setItems(cities.getCityList(), new CityOnClickListener());
 		dialogBuilder.show();
 		
+	}
+
+	private int checkAndroidVersion() {
+		return android.os.Build.VERSION.SDK_INT;
 	}
 }
