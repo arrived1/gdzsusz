@@ -21,7 +21,7 @@ public class CityManulaPickerActivity extends Activity {
 	    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, cities.getCityList());
 		ListView listView = (ListView)findViewById(R.id.cityListView);
 		listView.setAdapter(adapter);
-		listView.setOnItemClickListener(new CityOnItemClickListener(this));
+		listView.setOnItemClickListener(new OnItemClickListenerCity(this));
 	}
 
 }

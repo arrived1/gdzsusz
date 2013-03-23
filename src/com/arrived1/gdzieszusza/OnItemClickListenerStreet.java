@@ -6,13 +6,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class StreetOnItemClickListener implements OnItemClickListener {
+public class OnItemClickListenerStreet implements OnItemClickListener {
 	private String city = "";
 	private Context context;
 	private double latitude = 0;
 	private double longitude = 0;
 	
-	public StreetOnItemClickListener(Context context_, String city_) {
+	public OnItemClickListenerStreet(Context context_, String city_) {
 		this.context = context_;
 		this.city = city_;
 	}

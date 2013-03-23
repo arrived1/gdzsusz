@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class CityOnItemClickListener implements OnItemClickListener {
+public class OnItemClickListenerCity implements OnItemClickListener {
 	private Context context;
 
-	public CityOnItemClickListener(Context context_) {
+	public OnItemClickListenerCity(Context context_) {
 		this.context = context_;
 	}
 

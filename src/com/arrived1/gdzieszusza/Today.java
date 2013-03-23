@@ -26,7 +26,7 @@ public class Today extends Tab {
 		TodayListAdapter adapter = new TodayListAdapter(view.getContext(), city.getTodayData());
 		ListView listView = (ListView)view.findViewById(R.id.listView);
 		listView.setAdapter(adapter);
-		listView.setOnItemClickListener(new StreetOnItemClickListener(context_, city.getName()));
+		listView.setOnItemClickListener(new OnItemClickListenerStreet(context_, city.getName()));
 	}
 	
     private void addAdView() {
