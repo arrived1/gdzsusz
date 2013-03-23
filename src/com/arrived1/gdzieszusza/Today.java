@@ -23,7 +23,7 @@ public class Today extends Tab {
 //		double latitude = networkGeoLocalCity.getLatitudeE6();
 //		double longitude = networkGeoLocalCity.getLongitudeE6();
 		
-		TodayListAdapter adapter = new TodayListAdapter(view.getContext(), city.getTodayData());
+		AdapterTodayList adapter = new AdapterTodayList(view.getContext(), city.getTodayData());
 		ListView listView = (ListView)view.findViewById(R.id.listView);
 		listView.setAdapter(adapter);
 		listView.setOnItemClickListener(new OnItemClickListenerStreet(context_, city.getName()));

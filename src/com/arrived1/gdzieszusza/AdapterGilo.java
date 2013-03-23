@@ -9,18 +9,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-class GiloAdapter extends PagerAdapter {
+class AdapterGilo extends PagerAdapter {
 	final String[] page_titles = new String[]{"Dzisiaj", "Jutro", "Pełna wersja"};
 	private Context context;
 	private City city;
 
-	public GiloAdapter(Context context_){
+	public AdapterGilo(Context context_){
 		this.context = context_;
 		
 		city = new City();
 	}
 	
-	public GiloAdapter(Context context_, Activity activity_, String cityName){
+	public AdapterGilo(Context context_, Activity activity_, String cityName){
 		this.context = context_;
 
 		GetCityData getCityData = new GetCityData(cityName, activity_);

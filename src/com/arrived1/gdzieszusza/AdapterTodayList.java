@@ -10,11 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class TodayListAdapter extends ArrayAdapter<Police> {
+public class AdapterTodayList extends ArrayAdapter<Police> {
     private final Context context;
 	private final Vector<Police> values;
  
-	public TodayListAdapter(Context context, Vector<Police> values) {
+	public AdapterTodayList(Context context, Vector<Police> values) {
 		super(context, R.layout.listview_layout, values);
 		this.context = context;
 		this.values = values;

@@ -20,7 +20,7 @@ public class ActivityRunner extends Activity {
         Bundle extras = getIntent().getExtras();
 		String cityName = extras.getString("CITY_NAME");
         
-        GiloAdapter mAdapter = new GiloAdapter(this, this, cityName);   
+        AdapterGilo mAdapter = new AdapterGilo(this, this, cityName);   
 
         //instantiate the Views
         ViewPager mPager = (ViewPager)findViewById(R.id.pager);
