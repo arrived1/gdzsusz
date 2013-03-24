@@ -32,6 +32,8 @@ public class MainActivity extends Activity {
         	myIntent.putExtra("CITY_NAME", cityName);
         	startActivity(myIntent);
         }
+        
+        finish();
     }
     
     private String check() {
