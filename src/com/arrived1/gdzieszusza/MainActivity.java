@@ -26,14 +26,16 @@ public class MainActivity extends Activity {
         else if(cityName.equals(unnamedCity)) {
         	 Intent myIntent = new Intent(this, ActivityCityManulaPicker.class);
         	 startActivity(myIntent);
+        	 
+        	 finish();
         }
         else { 
         	Intent myIntent = new Intent(this, ActivityRunner.class);
         	myIntent.putExtra("CITY_NAME", cityName);
         	startActivity(myIntent);
+        	
+        	finish();
         }
-        
-        finish();
     }
     
     private String check() {
