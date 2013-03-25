@@ -15,7 +15,7 @@ public class ActivityRunner extends Activity {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.runner_activity); 
+        setContentView(R.layout.runner_activity);
         
         Bundle extras = getIntent().getExtras();
 		String cityName = extras.getString("CITY_NAME");

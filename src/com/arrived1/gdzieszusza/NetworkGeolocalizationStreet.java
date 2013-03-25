@@ -9,7 +9,7 @@ import android.location.Geocoder;
 
 public class NetworkGeolocalizationStreet {
 	private Context context;
-	List<Address> addresses;;
+	List<Address> addresses;
 	
 	public NetworkGeolocalizationStreet(Context context_, String street_) {
 		this.context = context_;
@@ -19,6 +19,7 @@ public class NetworkGeolocalizationStreet {
 			addresses = geoCoder.getFromLocationName(street_, 5);
 		} 
 	    catch (IOException e) {
+	    	addresses.add(new Address(new Locale("en")));
 			e.printStackTrace();
 		}
 	}
