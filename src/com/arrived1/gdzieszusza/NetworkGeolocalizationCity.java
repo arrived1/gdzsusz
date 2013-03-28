@@ -12,7 +12,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 
 public class NetworkGeolocalizationCity {
-	private String cityName = "Nieznane misto";
+	private final String unknownCity = "Nieznane misto";
+	private String cityName = unknownCity;
 	
 	public NetworkGeolocalizationCity(Context context, Activity activity) {
 		
@@ -30,12 +31,14 @@ public class NetworkGeolocalizationCity {
 			cityName = addresses.get(0).getLocality();
 		} 
 		catch (IOException e) {
-			cityName = "Nieznane misto";
+			cityName = unknownCity;
 			e.printStackTrace();
 		}
 	}
 	
 	public String getCurrentCityName() {
-			return cityName;
+		if(cityName == null)
+			return unknownCity;
+		return cityName;
 	}
 }
