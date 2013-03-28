@@ -26,14 +26,20 @@ public class NetworkGeolocalizationStreet {
 	
 	//WARNING: magic value 51, 17 Wrolcaw coords?
 	public double getLatitudeE6() {
-		if(addresses.size() > 0) {
+		if(addresses == null) {
+			return 51;
+		}	
+		else if(addresses.size() > 0) {
 			return addresses.get(0).getLatitude();
 		}
 		return 51;
 	}
 	
 	public double getLongitudeE6() {
-		if(addresses.size() > 0) {
+		if(addresses == null) {
+			return 17;
+		}	
+		else if(addresses.size() > 0) {
 			return addresses.get(0).getLongitude();
 		}
 		return 17;
