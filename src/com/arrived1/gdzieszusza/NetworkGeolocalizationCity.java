@@ -27,6 +27,11 @@ public class NetworkGeolocalizationCity {
 			Location loc = locMgr.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 			Geocoder gcd = new Geocoder(context, Locale.getDefault());
 			
+			if(gcd == null) {
+				cityName = unknownCity;
+				return;
+			}
+
 			addresses = gcd.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1);
 			cityName = addresses.get(0).getLocality();
 		} 
