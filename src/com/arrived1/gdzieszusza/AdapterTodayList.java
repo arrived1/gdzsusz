@@ -13,11 +13,13 @@ import android.widget.TextView;
 public class AdapterTodayList extends ArrayAdapter<Police> {
     private final Context context;
 	private final Vector<Police> values;
+	private int txtSize;
  
 	public AdapterTodayList(Context context, Vector<Police> values) {
 		super(context, R.layout.listview_layout, values);
 		this.context = context;
 		this.values = values;
+		this.txtSize = checkStreetNameSize();
 	}
  
 	@Override
@@ -26,7 +28,12 @@ public class AdapterTodayList extends ArrayAdapter<Police> {
 		View rowView = inflater.inflate(R.layout.listview_layout, parent, false);
 		
 		TextView textView1 = (TextView)rowView.findViewById(R.id.txt);
-		textView1.setText(" " + values.elementAt(position).street);
+		String street = " " + values.elementAt(position).street;
+		
+		if(txtSize > 16)
+			textView1.setTextSize(15.f);
+		
+		textView1.setText(street);
 		
 		TextView textView2 = (TextView)rowView.findViewById(R.id.date);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
@@ -36,5 +43,15 @@ public class AdapterTodayList extends ArrayAdapter<Police> {
 		imageView.setImageResource(R.drawable.ic);
  
 		return rowView;
+	}
+	
+	private int checkStreetNameSize() {
+		int size = 0;
+		for(int i = 0; i < values.size(); ++i) {
+			int streetSize = values.elementAt(i).street.length();
+			if(streetSize > size)
+				size = streetSize;
+		}
+		return size;
 	}
 }

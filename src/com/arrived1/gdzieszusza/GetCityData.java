@@ -10,6 +10,8 @@ public class GetCityData {
 			this.city = new City(cityName, "http://www.apteka-zwycieska.pl/gdzieSusza/wroclaw.html");
 		else if(cityName.equals("Poznań"))
 			this.city = new City(cityName, "http://www.apteka-zwycieska.pl/gdzieSusza/poznan.html");
+		else if(cityName.equals("Toruń"))
+			this.city = new City(cityName, "http://www.apteka-zwycieska.pl/gdzieSusza/torun.html");
 		else {
 			String title = "Błąd lokalizacji";
         	String msg = "Aplikacja nie wspiera jeszcze wyszukiwania fotoradarów w mieście: " + cityName
